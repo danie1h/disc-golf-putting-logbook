@@ -1,4 +1,6 @@
 .canvas-container {
+  margin: 5px;
   border: 1px solid black;
+  border-radius: 15px;
   background-image: url('../resources/images/DG_Basket.png')
 }

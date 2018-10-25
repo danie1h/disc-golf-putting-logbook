@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '../button/button.js'
 import './putt-info.css'
 
 export const PuttInfo = (props) => {
@@ -6,8 +7,16 @@ export const PuttInfo = (props) => {
       <div className="putting-details">
         <h2 className="putting-details-title">Hole #{props.holeNum}</h2>
         <div className="hit-or-miss">
-          <button className="hit" onClick={props.handleHitBtn}>Hit</button>
-          <button className="miss" onClick={props.handleMissBtn}>Miss</button>
+          <Button
+            className='hit-btn'
+            onClick={props.handleHitBtn}
+            content='Hit'
+          />
+          <Button
+            className='miss-btn'
+            onClick={props.handleMissBtn}
+            content='Miss'
+          />
         </div>
       </div>
     )

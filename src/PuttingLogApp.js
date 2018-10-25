@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 import { Circle, Star } from 'react-konva'
 import { PuttInfo } from './putt-info/putt-info.js'
-import DisplayPutt from './display-putt/display-putt.js'
-import { SavePutt } from './save-putt/save-putt.js'
-import PuttOverview from './putt-overview/putt-overview.js'
-import { ResetBtn } from './reset-btn/reset-btn.js'
+import { DisplayPutt } from './display-putt/display-putt.js'
+import { Button } from './button/button.js'
 import './PuttingLogApp.css'
 
 class PuttingLogApp extends Component {
@@ -12,10 +10,11 @@ class PuttingLogApp extends Component {
     super(props)
 
     this.state = {
-      previousPutt: [],
-      previousPuttOutput: [],
+      puttLog: [],
+      puttCanvasShapes: [],
       holeNum: 1,
       mode: '',
+      locale: '',
       canvasWidth: 300,
       canvasHeight: 300,
       shapeXCoordinate: 300 / 2,
@@ -62,7 +61,7 @@ class PuttingLogApp extends Component {
 
   captureNextClick() {
     this.setState({
-      previousPutt: [...this.state.previousPutt, {
+      puttLog: [...this.state.puttLog, {
         holeNum: this.state.holeNum,
         mode: this.state.mode,
         shapeXCoordinate: this.state.shapeXCoordinate,
@@ -76,23 +75,23 @@ class PuttingLogApp extends Component {
   }
 
   captureOverviewClick() {
-    let previousPuttJSX = this.state.previousPutt.map( putt => {
-      if (putt.mode === "hit") {
-        return <Circle key={putt.holeNum} x={putt.shapeXCoordinate} y={putt.shapeYCoordinate} radius={20} fill="green" />
-      } else { // putt.mode === "miss"
-        return <Star key={putt.holeNum} x={putt.shapeXCoordinate} y={putt.shapeYCoordinate} numPoints={7} innerRadius={10} outerRadius={20} fill="red" />
+    let puttCanvasShapesJSX = this.state.puttLog.map( putt => {
+      if (putt.mode === 'hit') {
+        return <Circle key={putt.holeNum} x={putt.shapeXCoordinate} y={putt.shapeYCoordinate} radius={20} fill='green' stroke='black' />
+      } else { // putt.mode === 'miss'
+        return <Star key={putt.holeNum} x={putt.shapeXCoordinate} y={putt.shapeYCoordinate} numPoints={7} innerRadius={10} outerRadius={20} fill='red' stroke='black'/>
       }
     })
 
     this.setState({
-      previousPuttOutput: previousPuttJSX
+      puttCanvasShapes: puttCanvasShapesJSX
     })
   }
 
   captureResetClick() {
     this.setState({
-      previousPutt: [],
-      previousPuttOutput: [],
+      puttLog: [],
+      puttCanvasShapes: [],
       holeNum: 1,
       mode: '',
       shapeXCoordinate: 300 / 2,
@@ -108,12 +107,16 @@ class PuttingLogApp extends Component {
           <h1>Putting Logbook</h1>
         </header>
         <div className='main'>
-          <div className="master-controls">
-            <PuttOverview
-              captureClick={this.captureOverviewClick}
+          <div className='master-controls'>
+            <Button
+              className='overview-btn'
+              onClick={this.captureOverviewClick}
+              content='Overview'
             />
-            <ResetBtn
-              captureClick={this.captureResetClick}
+            <Button
+              className='reset-btn'
+              onClick={this.captureResetClick}
+              content='Reset'
             />
           </div>
           <PuttInfo
@@ -129,10 +132,12 @@ class PuttingLogApp extends Component {
             captureClick={this.captureCanvasClick}
             canvasWidth={this.state.canvasWidth}
             canvasHeight={this.state.canvasHeight}
-            previousPuttOutput={this.state.previousPuttOutput}
+            puttCanvasShapes={this.state.puttCanvasShapes}
           />
-          <SavePutt
-            captureClick={this.captureNextClick}
+          <Button
+            className='next-btn'
+            onClick={this.captureNextClick}
+            content='Next'
           />
         </div>
       </div>
