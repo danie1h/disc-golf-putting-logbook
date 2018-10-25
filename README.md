@@ -6,6 +6,7 @@ Alpha version
 
 - [About](#about)
 - [How To](#how-to)
+- [Demo](#demo)
 - [Tech Stack](#tech-stack)
 - [Improvements](#improvements)
 
@@ -16,6 +17,10 @@ In the sport of [Disc Golf](https://en.wikipedia.org/wiki/Disc_golf), putting is
 ## How To
 
 tbd
+
+## Demo
+
+Preview the [demo](https://danie1h.github.io/disc-golf-putting-logbook/).
 
 ## Tech stack
 
