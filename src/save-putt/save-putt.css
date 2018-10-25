@@ -1,0 +1,9 @@
+.save{
+  width: 50px;
+  margin: 10px;
+}
+
+.save:hover {
+  background-color: gray;
+  color: white;
+}
