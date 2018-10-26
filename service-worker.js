@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/disc-golf-putting-logbook/precache-manifest.3d08e0d6f059f810f54841ac08159c08.js"
+  "/disc-golf-putting-logbook/precache-manifest.6d7a5bb241ae64174e126e705ae2177e.js"
 );
 
 workbox.clientsClaim();
