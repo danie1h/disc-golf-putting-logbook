@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 25px;
 }
 
 .home .title {
-  margin-bottom: 0;
+  margin: 0;
   font-size: 1.25em;
 }
 

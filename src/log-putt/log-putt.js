@@ -8,6 +8,7 @@ export const LogPutt = (props) => {
   return (
     <div className='log-putt'>
       <PuttInfo
+        className="putt-info"
         holeNum={props.holeNum}
         handleHitBtn={props.handleHitBtn}
         handleMissBtn={props.handleMissBtn}

@@ -5,6 +5,7 @@ import { Home } from './home/home.js'
 import { LogPutt } from './log-putt/log-putt.js'
 import PuttOverview from './overview/overview.js'
 import { NoMatch } from './no-match/no-match.js'
+import plLogo from './resources/images/pl-logo.png'
 import './PuttingLogApp.css'
 
 class PuttingLogApp extends Component {
@@ -128,7 +129,10 @@ class PuttingLogApp extends Component {
       <Router>
         <div className='putting-log-app'>
           <header className='header-container'>
-            <Link to='/disc-golf-putting-logbook/' className='header-title'>Putting Logbook</Link>
+            <div className='header-home'>
+              <Link to='/disc-golf-putting-logbook/' className='header-logo'><img className='logo' src={plLogo} width='25' height='25' alt='logo' /></Link>
+              <Link to='/disc-golf-putting-logbook/' className='header-title'>Putting Logbook</Link>
+            </div>
             <nav className='header-nav'>
               <Link to='/disc-golf-putting-logbook/log' className='header-log'>Log</Link>
               <Link to='/disc-golf-putting-logbook/overview' className='header-overview'>Overview</Link>
