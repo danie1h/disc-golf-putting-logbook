@@ -10,10 +10,9 @@
   font-size: 2em;
 }
 
-.putting-overview .description {
-  font-size: 1em;
-  text-align: center;
-  padding: 0 10px 0 10px;
+.coming-soon {
+  color: green;
+  font-weight: bold;
 }
 
 .putting-overview p {
@@ -28,6 +27,12 @@
   border: 3px solid gray;
   border-radius: 15px;
   background-image: url('../resources/images/DG_Basket.png')
+}
+
+.data-table {
+  width: 300px;
+  margin: 5px;
+  text-align: center;
 }
 
 @media only screen and (min-width: 480px) {
