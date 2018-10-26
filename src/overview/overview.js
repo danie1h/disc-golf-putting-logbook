@@ -11,7 +11,7 @@ class PuttOverview extends Component {
           )
         })
       :
-        <p>No Data Available. Log your putts <Link to='/log'>here</Link>, then check your overview.</p>
+        <p>No Data Available. Log your putts <Link to='/disc-golf-putting-logbook/log'>here</Link>, then check your overview.</p>
 
     return (
       <div className="putting-overview">
