@@ -1,9 +1,0 @@
-.overview {
-  width: 100px;
-  margin: 0 10px 0 10px;
-}
-
-.overview:hover {
-  background-color: gray;
-  color: white;
-}

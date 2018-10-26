@@ -1,0 +1,12 @@
+.log-putt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.master-controls {
+  margin: 10px 0 10px 0;
+  display: flex;
+  flex-direction: row;
+}

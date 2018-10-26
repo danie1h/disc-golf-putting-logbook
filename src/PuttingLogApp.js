@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Circle, Star } from 'react-konva'
-import { PuttInfo } from './putt-info/putt-info.js'
-import { DisplayPutt } from './display-putt/display-putt.js'
-import { Button } from './button/button.js'
+import { Home } from './home/home.js'
+import { LogPutt } from './log-putt/log-putt.js'
+import PuttOverview from './overview/overview.js'
+import { NoMatch } from './no-match/no-match.js'
 import './PuttingLogApp.css'
 
 class PuttingLogApp extends Component {
@@ -26,7 +28,6 @@ class PuttingLogApp extends Component {
     this.captureCanvasClick = this.captureCanvasClick.bind(this)
     this.captureCanvasDrag = this.captureCanvasDrag.bind(this)
     this.captureNextClick = this.captureNextClick.bind(this)
-    this.captureOverviewClick = this.captureOverviewClick.bind(this)
     this.captureResetClick = this.captureResetClick.bind(this)
   }
 
@@ -60,6 +61,28 @@ class PuttingLogApp extends Component {
   }
 
   captureNextClick() {
+    let puttCanvasShapesJSX = (this.state.mode === 'hit') ?
+      <Circle
+        key={this.state.holeNum}
+        x={this.state.shapeXCoordinate}
+        y={this.state.shapeYCoordinate}
+        radius={20}
+        fill='green'
+        stroke='black'
+      />
+      :
+      <Star
+        key={this.state.holeNum}
+        x={this.state.shapeXCoordinate}
+        y={this.state.shapeYCoordinate}
+        numPoints={7}
+        innerRadius={10}
+        outerRadius={20}
+        fill='red'
+        stroke='black'
+      />
+
+
     this.setState({
       puttLog: [...this.state.puttLog, {
         holeNum: this.state.holeNum,
@@ -67,6 +90,7 @@ class PuttingLogApp extends Component {
         shapeXCoordinate: this.state.shapeXCoordinate,
         shapeYCoordinate: this.state.shapeYCoordinate
       }],
+      puttCanvasShapes: [...this.state.puttCanvasShapes, puttCanvasShapesJSX],
       holeNum: this.state.holeNum + 1,
       mode: '',
       shapeXCoordinate: 300 / 2,
@@ -99,48 +123,47 @@ class PuttingLogApp extends Component {
     })
   }
 
-
   render() {
-    return (
-      <div className='putting-log-app'>
-        <header className='App-header'>
-          <h1>Putting Logbook</h1>
-        </header>
-        <div className='main'>
-          <div className='master-controls'>
-            <Button
-              className='overview-btn'
-              onClick={this.captureOverviewClick}
-              content='Overview'
+    return(
+      <Router>
+        <div className="putting-log-app">
+          <header className='header-container'>
+            <Link to='/' className='header-title'>Putting Logbook</Link>
+            <nav className='header-nav'>
+              <Link to='/log' className='header-log'>Log</Link>
+              <Link to='/overview' className='header-overview'>Overview</Link>
+            </nav>
+          </header>
+
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route
+              path="/log"
+              render={props => <LogPutt {...props}
+                holeNum={this.state.holeNum}
+                handleHitBtn={this.handleHitBtn}
+                handleMissBtn={this.handleMissBtn}
+                mode={this.state.mode}
+                x={this.state.shapeXCoordinate}
+                y={this.state.shapeYCoordinate}
+                captureCanvasDrag={this.captureCanvasDrag}
+                captureCanvasClick={this.captureCanvasClick}
+                canvasWidth={this.state.canvasWidth}
+                canvasHeight={this.state.canvasHeight}
+                onClickNext={this.captureNextClick}
+                onClickReset={this.captureResetClick}
+              />}
             />
-            <Button
-              className='reset-btn'
-              onClick={this.captureResetClick}
-              content='Reset'
+            <Route
+              path="/overview"
+              render={props => <PuttOverview {...props}
+                puttLog={this.state.puttLog}
+              />}
             />
-          </div>
-          <PuttInfo
-            holeNum={this.state.holeNum}
-            handleHitBtn={this.handleHitBtn}
-            handleMissBtn={this.handleMissBtn}
-          />
-          <DisplayPutt
-            mode={this.state.mode}
-            x={this.state.shapeXCoordinate}
-            y={this.state.shapeYCoordinate}
-            captureDrag={this.captureCanvasDrag}
-            captureClick={this.captureCanvasClick}
-            canvasWidth={this.state.canvasWidth}
-            canvasHeight={this.state.canvasHeight}
-            puttCanvasShapes={this.state.puttCanvasShapes}
-          />
-          <Button
-            className='next-btn'
-            onClick={this.captureNextClick}
-            content='Next'
-          />
+            <Route component={NoMatch} />
+          </Switch>
         </div>
-      </div>
+      </Router>
     )
   }
 }

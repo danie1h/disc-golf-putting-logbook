@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../button/button.js'
+import { Button } from '../../button/button.js'
 import './putt-info.css'
 
 export const PuttInfo = (props) => {
