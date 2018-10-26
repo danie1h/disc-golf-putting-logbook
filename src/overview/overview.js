@@ -4,7 +4,7 @@ import './overview.css'
 
 class PuttOverview extends Component {
   render() {
-    let puttDetailList = (this.props.puttLog.length > 1) ?
+    let puttDetailList = (this.props.puttLog.length > 0) ?
         this.props.puttLog.map( putt => {
           return(
             <p key={putt.holeNum}>Hole #{putt.holeNum}: {putt.mode} </p>
