@@ -165,6 +165,9 @@ class PuttingLogApp extends Component {
               path='/disc-golf-putting-logbook/overview'
               render={props => <PuttOverview {...props}
                 puttLog={this.state.puttLog}
+                canvasWidth={this.state.canvasWidth}
+                canvasHeight={this.state.canvasHeight}
+                puttCanvasShapes={this.state.puttCanvasShapes}
               />}
             />
             <Route component={NoMatch} />
