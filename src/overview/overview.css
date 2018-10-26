@@ -2,4 +2,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px 10px 0 10px;
+}
+
+.putting-overview .title {
+  margin: 0;
+  font-size: 2em;
+}
+
+.putting-overview .description {
+  font-size: 1em;
+  text-align: center;
+  padding: 0 10px 0 10px;
+}
+
+.putting-overview p {
+  margin: 10px 0 10px 0;
+  font-size: 1em;
+  padding: 0 10px 0 10px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 480px) {
+  .putting-overview .description {
+    font-size: 1.25em;
+  }
 }

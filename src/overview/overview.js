@@ -14,9 +14,9 @@ class PuttOverview extends Component {
         <p>No Data Available. Log your putts <Link to='/disc-golf-putting-logbook/log'>here</Link>, then check your overview.</p>
 
     return (
-      <div className="putting-overview">
-        <h1 className="title">Overview</h1>
-        <h2>More features and stats coming soon!</h2>
+      <div className='putting-overview'>
+        <h1 className='title'>Overview</h1>
+        <h2 className='description'>More features and stats coming soon!</h2>
         {puttDetailList}
       </div>
     )

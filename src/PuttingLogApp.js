@@ -126,7 +126,7 @@ class PuttingLogApp extends Component {
   render() {
     return(
       <Router>
-        <div className="putting-log-app">
+        <div className='putting-log-app'>
           <header className='header-container'>
             <Link to='/disc-golf-putting-logbook/' className='header-title'>Putting Logbook</Link>
             <nav className='header-nav'>
@@ -136,9 +136,9 @@ class PuttingLogApp extends Component {
           </header>
 
           <Switch>
-            <Route exact path="/disc-golf-putting-logbook/" component={Home} />
+            <Route exact path='/disc-golf-putting-logbook/' component={Home} />
             <Route
-              path="/disc-golf-putting-logbook/log"
+              path='/disc-golf-putting-logbook/log'
               render={props => <LogPutt {...props}
                 holeNum={this.state.holeNum}
                 handleHitBtn={this.handleHitBtn}
@@ -155,7 +155,7 @@ class PuttingLogApp extends Component {
               />}
             />
             <Route
-              path="/disc-golf-putting-logbook/overview"
+              path='/disc-golf-putting-logbook/overview'
               render={props => <PuttOverview {...props}
                 puttLog={this.state.puttLog}
               />}
