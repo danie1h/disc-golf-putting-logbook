@@ -34,7 +34,7 @@
   padding-right: 20px;
 }
 
-.header-overview, .header-log, .header-about {
+.header-results, .header-log, .header-about {
   color: white;
   text-decoration: none;
   font-size: 15px;
@@ -47,7 +47,7 @@
   padding-right: 10px
 }
 
-.header-overview:hover, .header-log:hover, .header-about:hover, .header-title:hover {
+.header-results:hover, .header-log:hover, .header-about:hover, .header-title:hover {
   color: #00b33c;
 }
 

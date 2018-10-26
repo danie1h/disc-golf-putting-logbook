@@ -4,7 +4,7 @@ import { Circle, Star } from 'react-konva'
 import { Home } from './home/home.js'
 import { About } from './about/about.js'
 import { LogPutt } from './log-putt/log-putt.js'
-import PuttOverview from './overview/overview.js'
+import PuttResults from './results/results.js'
 import { NoMatch } from './no-match/no-match.js'
 import plLogo from './resources/images/pl-logo.png'
 import './PuttingLogApp.css'
@@ -85,6 +85,7 @@ class PuttingLogApp extends Component {
       />
 
 
+
     this.setState({
       puttLog: [...this.state.puttLog, {
         holeNum: this.state.holeNum,
@@ -97,20 +98,6 @@ class PuttingLogApp extends Component {
       mode: '',
       shapeXCoordinate: 300 / 2,
       shapeYCoordinate: 300 / 2
-    })
-  }
-
-  captureOverviewClick() {
-    let puttCanvasShapesJSX = this.state.puttLog.map( putt => {
-      if (putt.mode === 'hit') {
-        return <Circle key={putt.holeNum} x={putt.shapeXCoordinate} y={putt.shapeYCoordinate} radius={20} fill='green' stroke='black' />
-      } else { // putt.mode === 'miss'
-        return <Star key={putt.holeNum} x={putt.shapeXCoordinate} y={putt.shapeYCoordinate} numPoints={7} innerRadius={10} outerRadius={20} fill='red' stroke='black'/>
-      }
-    })
-
-    this.setState({
-      puttCanvasShapes: puttCanvasShapesJSX
     })
   }
 
@@ -137,7 +124,7 @@ class PuttingLogApp extends Component {
             <nav className='header-nav'>
               <Link to='/disc-golf-putting-logbook/about' className='header-about'>About</Link>
               <Link to='/disc-golf-putting-logbook/log' className='header-log'>Log</Link>
-              <Link to='/disc-golf-putting-logbook/overview' className='header-overview'>Overview</Link>
+              <Link to='/disc-golf-putting-logbook/results' className='header-results'>Results</Link>
             </nav>
           </header>
 
@@ -162,8 +149,8 @@ class PuttingLogApp extends Component {
               />}
             />
             <Route
-              path='/disc-golf-putting-logbook/overview'
-              render={props => <PuttOverview {...props}
+              path='/disc-golf-putting-logbook/results'
+              render={props => <PuttResults {...props}
                 puttLog={this.state.puttLog}
                 canvasWidth={this.state.canvasWidth}
                 canvasHeight={this.state.canvasHeight}

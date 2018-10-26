@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Stage, Layer } from 'react-konva'
-import './overview.css'
+import './results.css'
 
-class PuttOverview extends Component {
+class PuttResults extends Component {
   render() {
     let puttDataList = this.props.puttLog.map( putt => {
       return(
@@ -15,8 +15,8 @@ class PuttOverview extends Component {
     })
 
     return (
-      <div className='putting-overview'>
-        <h1 className='title'>Overview</h1>
+      <div className='putting-results'>
+        <h1 className='title'>Results</h1>
         {
           (puttDataList.length > 0) ?
             <div>
@@ -36,7 +36,7 @@ class PuttOverview extends Component {
               </table>
             </div>
           :
-            <p>No Data Available. Log your putts <Link to='/disc-golf-putting-logbook/log'>here</Link>, then check your overview.</p>
+            <p>No Data Available. Log your putts <Link to='/disc-golf-putting-logbook/log'>here</Link>, then check your results.</p>
         }
         <p className='coming-soon'>More features and stats coming soon!</p>
       </div>
@@ -45,4 +45,4 @@ class PuttOverview extends Component {
 
 }
 
-export default PuttOverview
+export default PuttResults
