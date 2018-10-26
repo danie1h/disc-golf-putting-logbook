@@ -28,11 +28,15 @@ class PuttResults extends Component {
                 </Stage>
               </div>
               <table className='data-table'>
-                <tr>
-                  <th>Hole #</th>
-                  <th>Putt Attempt</th>
-                </tr>
-                {puttDataList}
+                <thead>
+                  <tr>
+                    <th>Hole #</th>
+                    <th>Putt Attempt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {puttDataList}
+                </tbody>
               </table>
             </div>
           :
