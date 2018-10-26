@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Circle, Star } from 'react-konva'
 import { Home } from './home/home.js'
+import { About } from './about/about.js'
 import { LogPutt } from './log-putt/log-putt.js'
 import PuttOverview from './overview/overview.js'
 import { NoMatch } from './no-match/no-match.js'
@@ -134,6 +135,7 @@ class PuttingLogApp extends Component {
               <Link to='/disc-golf-putting-logbook/' className='header-title'>Putting Logbook</Link>
             </div>
             <nav className='header-nav'>
+              <Link to='/disc-golf-putting-logbook/about' className='header-about'>About</Link>
               <Link to='/disc-golf-putting-logbook/log' className='header-log'>Log</Link>
               <Link to='/disc-golf-putting-logbook/overview' className='header-overview'>Overview</Link>
             </nav>
@@ -141,6 +143,7 @@ class PuttingLogApp extends Component {
 
           <Switch>
             <Route exact path='/disc-golf-putting-logbook/' component={Home} />
+            <Route exact path='/disc-golf-putting-logbook/about' component={About} />
             <Route
               path='/disc-golf-putting-logbook/log'
               render={props => <LogPutt {...props}
