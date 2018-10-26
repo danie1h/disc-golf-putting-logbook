@@ -38,12 +38,17 @@
   color: white;
   text-decoration: none;
   font-size: 15px;
+  font-weight: bold;
   text-align: right;
   padding-left: 10px;
 }
 
 .header-log {
   padding-right: 10px
+}
+
+.header-overview:hover, .header-log:hover, .header-title:hover {
+  color: #00b33c;
 }
 
 @media only screen and (min-width: 480px) {
