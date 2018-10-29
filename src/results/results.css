@@ -1,3 +1,6 @@
+/* .title and .page-header style is referenced from log-putt.css */
+/* .divider style is referenced from log-putt.css */
+
 .putting-results {
   display: flex;
   flex-direction: column;
@@ -5,19 +8,15 @@
   margin: 25px 10px 0 10px;
 }
 
-.putting-results .title {
-  margin: 0;
-  font-size: 2em;
-}
-
 .coming-soon {
   color: green;
-  font-weight: bold;
+  font-size: .6em;
+  margin: 5px 0 5px 0;
 }
 
-.putting-results p {
+#no-data {
   margin: 10px 0 10px 0;
-  font-size: 1em;
+  font-size: .7em;
   padding: 0 10px 0 10px;
   text-align: center;
 }
@@ -36,7 +35,11 @@
 }
 
 @media only screen and (min-width: 480px) {
-  .putting-results .description {
-    font-size: 1.25em;
+  .coming-soon {
+    font-size: 1em;
+  }
+
+  #no-data {
+    font-size: 1em;
   }
 }

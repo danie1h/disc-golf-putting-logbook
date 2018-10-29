@@ -16,7 +16,11 @@ class PuttResults extends Component {
 
     return (
       <div className='putting-results'>
-        <h1 className='title'>Results</h1>
+        <header className='page-header'>
+          <h1 className='title'>Results</h1>
+          <p className='coming-soon'>More features and stats coming soon!</p>
+        </header>
+        <hr className='divider' />
         {
           (puttDataList.length > 0) ?
             <div>
@@ -40,13 +44,11 @@ class PuttResults extends Component {
               </table>
             </div>
           :
-            <p>No Data Available. Log your putts <Link to='/disc-golf-putting-logbook/log'>here</Link>, then check your results.</p>
+            <p id="no-data">No Data Available. Log your putts <Link to='/disc-golf-putting-logbook/log'>here</Link>, then check your results.</p>
         }
-        <p className='coming-soon'>More features and stats coming soon!</p>
       </div>
     )
   }
-
 }
 
 export default PuttResults

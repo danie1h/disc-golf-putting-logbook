@@ -8,7 +8,7 @@ import './log-putt.css'
 export const LogPutt = (props) => {
   return (
     <div className='log-putt'>
-      <header className='log-putt-header'>
+      <header className='page-header'>
         <h1 className="title">Log</h1>
         <div className='header-options'>
           <Button
@@ -19,7 +19,7 @@ export const LogPutt = (props) => {
           <Link to='/disc-golf-putting-logbook/results' className='get-results'>Results</Link>
         </div>
       </header>
-      <hr />
+      <hr className='divider'/>
       <div className='log-putt-controls'>
         <PuttInfo
           className='putt-info'

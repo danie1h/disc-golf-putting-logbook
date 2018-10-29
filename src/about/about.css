@@ -1,18 +1,26 @@
+/* .title and .page-header style is referenced from log-putt.css */
+
 .about {
+  margin: 25px 10px 0 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 25px 10px 0 10px;
 }
 
-.about .title {
-  margin: 0;
-  font-size: 1.25em;
+.page-header {
+  width: 300px;
+}
+
+.divider {
+  width: 350px;
+}
+
+.overview {
+  width: 300px;
 }
 
 .about .description {
-  margin-top: 10px;
-  padding: 0 25px 0 25px;
+  margin: 5px 0 5px 0;
   font-size: .9em;
   color: gray;
   text-align: justify;
@@ -25,12 +33,14 @@
 }
 
 .resources-title {
+  margin: 25px 0 5px 0;
   font-size: 1.1em;
-  margin: 0;
+  text-align: left;
 }
 
-.resources ul {
-  margin: 10px 0 10px 0;
+.resource-list {
+  width: 300px;
+  margin: 5px 0 5px 0;
   padding: 0;
 }
 
@@ -44,23 +54,30 @@
     margin: 25px 50px 0 50px;
   }
 
-  .about .title {
-    font-size: 2em;
+  .divider {
+    width: 480px;
   }
 
-  .resources-title {
-    font-size: 1.25em;
+  .page-header, .overview, .resource-list {
+    width: 450px;
   }
 
   .about .description {
     font-size: 1.25em;
-    max-width: 450px;
+  }
+
+  .resources-title {
+    font-size: 1.5em;
   }
 }
 
 @media only screen and (min-width: 700px) {
-  .resources-title {
-    font-size: 1.5em;
+  .divider {
+    width: 750px;
+  }
+
+  .page-header, .overview, .resource-list {
+    width: 700px;
   }
 
   .about .description {
