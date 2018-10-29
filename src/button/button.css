@@ -1,3 +1,17 @@
 button {
+  width: 70px;
   margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #2171b5;
+  border: none;
+  color: white;
+  box-shadow: 2px 2px 3px #4292c6;
+  font-size: .8em;
+}
+
+button:hover {
+  background-color: #4292c6;
+  box-shadow: 2px 2px 3px #2171b5;
+  cursor: pointer;
 }
