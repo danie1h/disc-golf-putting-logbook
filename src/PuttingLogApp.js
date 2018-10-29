@@ -22,7 +22,7 @@ class PuttingLogApp extends Component {
       canvasWidth: 300,
       canvasHeight: 300,
       shapeXCoordinate: 300 / 2,
-      shapeYCoordinate: 300 / 2
+      shapeYCoordinate: 300 / 2,
     }
 
     this.handleHitBtn = this.handleHitBtn.bind(this)
@@ -53,6 +53,8 @@ class PuttingLogApp extends Component {
       shapeXCoordinate: event.clientX - canvasOffsetLeft,
       shapeYCoordinate: event.pageY - canvasOffsetTop,
     })
+
+    event.preventDefault()
   }
 
   captureCanvasDrag(event) {
@@ -60,9 +62,39 @@ class PuttingLogApp extends Component {
       shapeXCoordinate: event.target.x(),
       shapeYCoordinate: event.target.y()
     })
+
+    event.preventDefault()
   }
 
   captureNextClick() {
+    function getPosition(width, height, xCoordinate, yCoordinate, rangePercentage) {
+      let widthCenter = width / 2;
+      let heightCenter = height / 2;
+      let giveAmount = widthCenter * rangePercentage;
+      let positionDescription = {
+        x: '',
+        y: ''
+      };
+
+      ( xCoordinate < widthCenter - giveAmount ) ?
+        positionDescription.x = 'left'
+      : ( xCoordinate > widthCenter + giveAmount ) ?
+        positionDescription.x = 'right'
+      :
+        positionDescription.x = 'center';
+
+      ( yCoordinate < heightCenter - giveAmount ) ?
+        positionDescription.y = 'high'
+      : ( yCoordinate > heightCenter + giveAmount ) ?
+        positionDescription.y = 'low'
+      :
+        positionDescription.y = 'center';
+
+      return positionDescription;
+    }
+
+    let positionDetails = getPosition(this.state.canvasWidth, this.state.canvasHeight, this.state.shapeXCoordinate, this.state.shapeYCoordinate, .1)
+
     let puttCanvasShapesJSX = (this.state.mode === 'hit') ?
       <Circle
         key={this.state.holeNum}
@@ -84,20 +116,20 @@ class PuttingLogApp extends Component {
         stroke='black'
       />
 
-
-
     this.setState({
       puttLog: [...this.state.puttLog, {
         holeNum: this.state.holeNum,
         mode: this.state.mode,
         shapeXCoordinate: this.state.shapeXCoordinate,
-        shapeYCoordinate: this.state.shapeYCoordinate
+        shapeYCoordinate: this.state.shapeYCoordinate,
+        shapeXPosition: positionDetails.x,
+        shapeYPosition: positionDetails.y
       }],
       puttCanvasShapes: [...this.state.puttCanvasShapes, puttCanvasShapesJSX],
       holeNum: this.state.holeNum + 1,
       mode: '',
       shapeXCoordinate: 300 / 2,
-      shapeYCoordinate: 300 / 2
+      shapeYCoordinate: 300 / 2,
     })
   }
 

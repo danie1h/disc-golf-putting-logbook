@@ -10,6 +10,7 @@ class PuttResults extends Component {
         <tr key={putt.holeNum}>
           <td>{putt.holeNum}</td>
           <td>{putt.mode}</td>
+          <td>{putt.shapeYPosition}, {putt.shapeXPosition}</td>
         </tr>
       )
     })
@@ -36,6 +37,7 @@ class PuttResults extends Component {
                   <tr>
                     <th>Hole #</th>
                     <th>Putt Attempt</th>
+                    <th>Position</th>
                   </tr>
                 </thead>
                 <tbody>
