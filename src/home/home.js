@@ -7,7 +7,10 @@ export const Home = () => {
     <div className='home'>
       <h1 className='title'>Disc Golf Putting Logbook</h1>
       <h2 className='description'>Log Putts, View Stats, Learn and Improve, Repeat</h2>
-      <Link to='/disc-golf-putting-logbook/log' className='get-started'>Get Started</Link>
+      <div className='home-link-items'>
+        <Link to='/disc-golf-putting-logbook/log' id='get-started' className='home-link'>Get Started</Link>
+        <Link to='/disc-golf-putting-logbook/about' id='learn-more' className='home-link'>Learn More</Link>
+      </div>
     </div>
   )
 }

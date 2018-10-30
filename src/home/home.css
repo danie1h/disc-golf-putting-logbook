@@ -16,7 +16,14 @@
   color: gray;
 }
 
-.get-started {
+.home-link-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.home-link {
   padding: 10px;
   border-radius: 10px;
   text-decoration: none;
@@ -25,7 +32,7 @@
   box-shadow: 3px 3px 5px #006622;
 }
 
-.get-started:hover {
+.home-link:hover {
   background-color: #00cc44;
   box-shadow: 3px 3px 5px #00802b;
 }
