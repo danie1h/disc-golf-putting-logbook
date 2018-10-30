@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/disc-golf-putting-logbook/static/js/runtime~main.d1ec0015.js"
   },
   {
-    "revision": "69c89e776ac823c91234",
-    "url": "/disc-golf-putting-logbook/static/js/main.69c89e77.chunk.js"
+    "revision": "d179605bf5333606c666",
+    "url": "/disc-golf-putting-logbook/static/js/main.d179605b.chunk.js"
   },
   {
     "revision": "c68d0cedc455fbe762cb",
     "url": "/disc-golf-putting-logbook/static/js/1.c68d0ced.chunk.js"
   },
   {
-    "revision": "69c89e776ac823c91234",
-    "url": "/disc-golf-putting-logbook/static/css/main.1f5e7421.chunk.css"
+    "revision": "d179605bf5333606c666",
+    "url": "/disc-golf-putting-logbook/static/css/main.c129c44c.chunk.css"
   },
   {
-    "revision": "944008ee395c29d1220d9aadf0acc4ab",
+    "revision": "623b4edaa619f439ced11cdce5628d63",
     "url": "/disc-golf-putting-logbook/index.html"
   }
 ];
