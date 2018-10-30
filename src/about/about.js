@@ -2,7 +2,7 @@ import React from 'react'
 import './about.css'
 
 export const About = () => {
-  return(
+  return (
     <article className='about'>
       <header className='page-header'>
         <h1 className='title'>About the Putting Logbook</h1>
@@ -13,7 +13,7 @@ export const About = () => {
       </section>
       <section className='resources'>
         <header className='page-header'>
-        <h2 className='resources-title'>Related Disc Golf Readings</h2>
+          <h2 className='resources-title'>Related Disc Golf Readings</h2>
         </header>
         <hr className='divider' />
         <ul className='resource-list'>

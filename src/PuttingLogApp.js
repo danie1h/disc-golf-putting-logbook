@@ -10,7 +10,7 @@ import plLogo from './resources/images/pl-logo.png'
 import './PuttingLogApp.css'
 
 class PuttingLogApp extends Component {
-  constructor(props){
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -34,84 +34,85 @@ class PuttingLogApp extends Component {
     this.captureResetClick = this.captureResetClick.bind(this)
   }
 
-  handleHitBtn() {
+  handleHitBtn () {
     this.setState({
       mode: 'hit'
     })
   }
 
-  handleMissBtn() {
+  handleMissBtn () {
     this.setState({
       mode: 'miss'
     })
   }
 
-  captureCanvasClick(event) {
+  captureCanvasClick (event) {
     let canvasOffsetLeft = document.getElementsByClassName('konvajs-content')[0].offsetLeft
     let canvasOffsetTop = document.getElementsByClassName('konvajs-content')[0].offsetTop
 
     this.setState({
       shapeXCoordinate: event.clientX - canvasOffsetLeft,
-      shapeYCoordinate: event.pageY - canvasOffsetTop,
+      shapeYCoordinate: event.pageY - canvasOffsetTop
     })
   }
 
-  captureCanvasDrag(event) {
+  captureCanvasDrag (event) {
     this.setState({
       shapeXCoordinate: event.target.x(),
       shapeYCoordinate: event.target.y()
     })
   }
 
-  captureNextClick() {
-    function getPosition(width, height, xCoordinate, yCoordinate, rangePercentage) {
-      let widthCenter = width / 2;
-      let heightCenter = height / 2;
-      let giveAmount = widthCenter * rangePercentage;
+  captureNextClick () {
+    function getPosition (width, height, xCoordinate, yCoordinate, rangePercentage) {
+      let widthCenter = width / 2
+      let heightCenter = height / 2
+      let giveAmount = widthCenter * rangePercentage
       let positionDescription = {
         x: '',
         y: ''
       };
 
-      ( xCoordinate < widthCenter - giveAmount ) ?
-        positionDescription.x = 'left'
-      : ( xCoordinate > widthCenter + giveAmount ) ?
-        positionDescription.x = 'right'
-      :
-        positionDescription.x = 'center';
+      (xCoordinate < widthCenter - giveAmount)
+        ? positionDescription.x = 'left'
+        : (xCoordinate > widthCenter + giveAmount)
+          ? positionDescription.x = 'right'
+          : positionDescription.x = 'center';
 
-      ( yCoordinate < heightCenter - giveAmount ) ?
-        positionDescription.y = 'high'
-      : ( yCoordinate > heightCenter + giveAmount ) ?
-        positionDescription.y = 'low'
-      :
-        positionDescription.y = 'center';
+      (yCoordinate < heightCenter - giveAmount)
+        ? positionDescription.y = 'high'
+        : (yCoordinate > heightCenter + giveAmount)
+          ? positionDescription.y = 'low'
+          : positionDescription.y = 'center'
 
-      return positionDescription;
+      return positionDescription
     }
 
-    let positionDetails = getPosition(this.state.canvasWidth, this.state.canvasHeight, this.state.shapeXCoordinate, this.state.shapeYCoordinate, .1)
+    let positionDetails = getPosition(this.state.canvasWidth, this.state.canvasHeight, this.state.shapeXCoordinate, this.state.shapeYCoordinate, 0.1)
 
-    let puttCanvasShapesJSX = (this.state.mode === 'hit') ?
-      <Circle
-        key={this.state.holeNum}
-        x={this.state.shapeXCoordinate}
-        y={this.state.shapeYCoordinate}
-        radius={20}
-        fill='green'
-        stroke='black'
-      />
-      :
-      <Star
-        key={this.state.holeNum}
-        x={this.state.shapeXCoordinate}
-        y={this.state.shapeYCoordinate}
-        numPoints={7}
-        innerRadius={10}
-        outerRadius={20}
-        fill='red'
-        stroke='black'
-      />
+    let puttCanvasShapesJSX = (this.state.mode === 'hit')
+      ? (
+        <Circle
+          key={this.state.holeNum}
+          x={this.state.shapeXCoordinate}
+          y={this.state.shapeYCoordinate}
+          radius={20}
+          fill='green'
+          stroke='black'
+        />
+      )
+      : (
+        <Star
+          key={this.state.holeNum}
+          x={this.state.shapeXCoordinate}
+          y={this.state.shapeYCoordinate}
+          numPoints={7}
+          innerRadius={10}
+          outerRadius={20}
+          fill='red'
+          stroke='black'
+        />
+      )
 
     this.setState({
       puttLog: [...this.state.puttLog, {
@@ -132,10 +133,10 @@ class PuttingLogApp extends Component {
     })
   }
 
-  captureMetaTagClick(event) {
+  captureMetaTagClick (event) {
     if (/active/.test(event.target.className)) {
       this.setState({
-        activeMetaTags: this.state.activeMetaTags.filter( tag => tag !== event.target.innerText)
+        activeMetaTags: this.state.activeMetaTags.filter(tag => tag !== event.target.innerText)
       })
     } else {
       this.setState({
@@ -144,7 +145,7 @@ class PuttingLogApp extends Component {
     }
   }
 
-  captureResetClick() {
+  captureResetClick () {
     this.setState({
       puttLog: [],
       puttCanvasShapes: [],
@@ -156,8 +157,8 @@ class PuttingLogApp extends Component {
     })
   }
 
-  render() {
-    return(
+  render () {
+    return (
       <Router>
         <div className='putting-log-app'>
           <header className='header-container'>

@@ -6,13 +6,13 @@ import { Link } from 'react-router-dom'
 import './log-putt.css'
 
 class LogPutt extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
       activeTagIndexList: [],
-      metaTagOutput: this.props.metaTagsList.map( (tag, index) => {
-        return(
+      metaTagOutput: this.props.metaTagsList.map((tag, index) => {
+        return (
           <Button
             key={index}
             className='tag-btn'
@@ -26,53 +26,53 @@ class LogPutt extends Component {
       })
     }
 
-    this.resetActiveMetaTags = this.resetActiveMetaTags.bind(this);
-    this.activateMetaTags = this.activateMetaTags.bind(this);
-    this.updateMetaTags = this.updateMetaTags.bind(this);
+    this.resetActiveMetaTags = this.resetActiveMetaTags.bind(this)
+    this.activateMetaTags = this.activateMetaTags.bind(this)
+    this.updateMetaTags = this.updateMetaTags.bind(this)
   }
 
-  updateMetaTags(metaTagList, activeTagList) {
-    const updatedMetaTagOutput = metaTagList.map( (tag, index) => {
-        if (activeTagList.includes(index)){
-          return(
-            <Button
-              key={index}
-              className='tag-btn active'
-              content={tag}
-              onClick={(event) => {
-                this.props.captureMetaTagClick(event)
-                this.activateMetaTags(event)
-              }}
-            />
-          )
-        } else {
-          return(
-            <Button
-              key={index}
-              className='tag-btn'
-              content={tag}
-              onClick={(event) => {
-                this.props.captureMetaTagClick(event)
-                this.activateMetaTags(event)
-              }}
-            />
-          )
-        }
+  updateMetaTags (metaTagList, activeTagList) {
+    const updatedMetaTagOutput = metaTagList.map((tag, index) => {
+      if (activeTagList.includes(index)) {
+        return (
+          <Button
+            key={index}
+            className='tag-btn active'
+            content={tag}
+            onClick={(event) => {
+              this.props.captureMetaTagClick(event)
+              this.activateMetaTags(event)
+            }}
+          />
+        )
+      } else {
+        return (
+          <Button
+            key={index}
+            className='tag-btn'
+            content={tag}
+            onClick={(event) => {
+              this.props.captureMetaTagClick(event)
+              this.activateMetaTags(event)
+            }}
+          />
+        )
+      }
     })
 
     return updatedMetaTagOutput
   }
 
-  activateMetaTags(event) {
-    const clickedTagIndex = this.state.metaTagOutput.findIndex( item => {
+  activateMetaTags (event) {
+    const clickedTagIndex = this.state.metaTagOutput.findIndex(item => {
       return event.target.innerText === item.props.content
     })
 
-    if(this.state.activeTagIndexList.includes(clickedTagIndex)){
-      const updatedActiveTagIndexList = this.state.activeTagIndexList.filter( (item, index) => item !== clickedTagIndex)
+    if (this.state.activeTagIndexList.includes(clickedTagIndex)) {
+      const updatedActiveTagIndexList = this.state.activeTagIndexList.filter((item, index) => item !== clickedTagIndex)
       const updatedMetaTagOutput = this.updateMetaTags(this.props.metaTagsList, updatedActiveTagIndexList)
       this.setState({
-        activeTagIndexList: this.state.activeTagIndexList.filter( (item, index) => item !== clickedTagIndex),
+        activeTagIndexList: this.state.activeTagIndexList.filter((item, index) => item !== clickedTagIndex),
         metaTagOutput: updatedMetaTagOutput
       })
     } else {
@@ -85,7 +85,7 @@ class LogPutt extends Component {
     }
   }
 
-  resetActiveMetaTags(event) {
+  resetActiveMetaTags (event) {
     const updatedMetaTagOutput = this.updateMetaTags(this.props.metaTagsList, [])
 
     this.setState({
@@ -94,11 +94,11 @@ class LogPutt extends Component {
     })
   }
 
-  render() {
+  render () {
     return (
       <div className='log-putt'>
         <header className='page-header'>
-          <h1 className="title">Log</h1>
+          <h1 className='title'>Log</h1>
           <div className='header-options'>
             <Button
               className='reset-all-btn'
@@ -111,7 +111,7 @@ class LogPutt extends Component {
             <Link to='/disc-golf-putting-logbook/results' className='get-results'>Results</Link>
           </div>
         </header>
-        <hr className='divider'/>
+        <hr className='divider' />
         <div className='log-putt-controls'>
           <PuttInfo
             className='putt-info'
@@ -133,7 +133,7 @@ class LogPutt extends Component {
           </div>
           <Button
             className='next-btn main-btn'
-            onClick={ () => {
+            onClick={() => {
               this.props.onClickNext()
               this.resetActiveMetaTags()
             }}
@@ -145,4 +145,4 @@ class LogPutt extends Component {
   }
 }
 
-export default LogPutt;
+export default LogPutt

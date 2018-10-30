@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './home.css'
 
 export const Home = () => {
-  return(
+  return (
     <div className='home'>
       <h1 className='title'>Disc Golf Putting Logbook</h1>
       <h2 className='description'>Log Putts, View Stats, Learn and Improve, Repeat</h2>

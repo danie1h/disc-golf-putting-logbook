@@ -4,9 +4,9 @@ import { Stage, Layer } from 'react-konva'
 import './results.css'
 
 class PuttResults extends Component {
-  render() {
-    let puttDataList = this.props.puttLog.map( putt => {
-      return(
+  render () {
+    let puttDataList = this.props.puttLog.map(putt => {
+      return (
         <tr key={putt.holeNum}>
           <td>{putt.holeNum}</td>
           <td>{putt.mode}</td>
@@ -24,31 +24,34 @@ class PuttResults extends Component {
         </header>
         <hr className='divider' />
         {
-          (puttDataList.length > 0) ?
-            <div>
-              <div className='canvas-container'>
-                <Stage width={this.props.canvasWidth} height={this.props.canvasHeight}>
-                  <Layer>
-                    {this.props.puttCanvasShapes}
-                  </Layer>
-                </Stage>
+          (puttDataList.length > 0)
+            ? (
+              <div>
+                <div className='canvas-container'>
+                  <Stage width={this.props.canvasWidth} height={this.props.canvasHeight}>
+                    <Layer>
+                      {this.props.puttCanvasShapes}
+                    </Layer>
+                  </Stage>
+                </div>
+                <table className='data-table'>
+                  <thead>
+                    <tr>
+                      <th>Hole #</th>
+                      <th>Putt Attempt</th>
+                      <th>Position</th>
+                      <th>Tags</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {puttDataList}
+                  </tbody>
+                </table>
               </div>
-              <table className='data-table'>
-                <thead>
-                  <tr>
-                    <th>Hole #</th>
-                    <th>Putt Attempt</th>
-                    <th>Position</th>
-                    <th>Tags</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {puttDataList}
-                </tbody>
-              </table>
-            </div>
-          :
-            <p id="no-data">No Data Available. Log your putts <Link to='/disc-golf-putting-logbook/log'>here</Link>, then check your results.</p>
+            )
+            : (
+              <p id='no-data'>No Data Available. Log your putts <Link to='/disc-golf-putting-logbook/log'>here</Link>, then check your results.</p>
+            )
         }
       </div>
     )
