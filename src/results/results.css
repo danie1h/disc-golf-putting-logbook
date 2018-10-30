@@ -20,8 +20,15 @@
   text-align: center;
 }
 
+#valid-putting-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .canvas-container {
   margin: 5px;
+  width: 300px;
   border: 3px solid gray;
   border-radius: 15px;
   background-image: url('../resources/images/DG_Basket.png')
@@ -40,5 +47,17 @@
 
   #no-data {
     font-size: 1em;
+  }
+
+  .data-table {
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .data-table {
+    width: 500px;
+    margin: 5px;
+    text-align: center;
   }
 }

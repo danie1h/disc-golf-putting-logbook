@@ -26,7 +26,7 @@ class PuttResults extends Component {
         {
           (puttDataList.length > 0)
             ? (
-              <div>
+              <div id='valid-putting-results'>
                 <div className='canvas-container'>
                   <Stage width={this.props.canvasWidth} height={this.props.canvasHeight}>
                     <Layer>
