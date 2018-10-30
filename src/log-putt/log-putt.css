@@ -35,10 +35,34 @@ hr {
   font-size: .8em;
 }
 
+.reset-all-btn {
+  border: none;
+}
+
 .log-putt-controls {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.tags {
+  width: 300px;
+}
+
+.tag-btn {
+  padding: 2px 8px 2px 8px;
+}
+
+.tag-btn:hover {
+  color: #d9d9d9;
+  background-color: #525252;
+  border-color: #252525;
+}
+
+.active {
+  color: #d9d9d9;
+  background-color: #006622;
+  border-color: #00441b;
 }
 
 .get-results:hover, .reset-all-btn:hover {

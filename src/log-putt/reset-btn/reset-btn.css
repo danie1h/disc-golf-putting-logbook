@@ -1,9 +1,0 @@
-.reset {
-  width: 100px;
-  margin: 0 10px 0 10px;
-}
-
-.reset:hover {
-  background-color: gray;
-  color: white;
-}

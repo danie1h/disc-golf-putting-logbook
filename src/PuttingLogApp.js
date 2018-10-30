@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Circle, Star } from 'react-konva'
 import { Home } from './home/home.js'
 import { About } from './about/about.js'
-import { LogPutt } from './log-putt/log-putt.js'
+import LogPutt from './log-putt/log-putt.js'
 import PuttResults from './results/results.js'
 import { NoMatch } from './no-match/no-match.js'
 import plLogo from './resources/images/pl-logo.png'
@@ -18,11 +18,11 @@ class PuttingLogApp extends Component {
       puttCanvasShapes: [],
       holeNum: 1,
       mode: '',
-      locale: '',
       canvasWidth: 300,
       canvasHeight: 300,
       shapeXCoordinate: 300 / 2,
       shapeYCoordinate: 300 / 2,
+      activeMetaTags: []
     }
 
     this.handleHitBtn = this.handleHitBtn.bind(this)
@@ -30,18 +30,19 @@ class PuttingLogApp extends Component {
     this.captureCanvasClick = this.captureCanvasClick.bind(this)
     this.captureCanvasDrag = this.captureCanvasDrag.bind(this)
     this.captureNextClick = this.captureNextClick.bind(this)
+    this.captureMetaTagClick = this.captureMetaTagClick.bind(this)
     this.captureResetClick = this.captureResetClick.bind(this)
   }
 
   handleHitBtn() {
     this.setState({
-      mode: 'hit',
+      mode: 'hit'
     })
   }
 
   handleMissBtn() {
     this.setState({
-      mode: 'miss',
+      mode: 'miss'
     })
   }
 
@@ -53,8 +54,6 @@ class PuttingLogApp extends Component {
       shapeXCoordinate: event.clientX - canvasOffsetLeft,
       shapeYCoordinate: event.pageY - canvasOffsetTop,
     })
-
-    event.preventDefault()
   }
 
   captureCanvasDrag(event) {
@@ -62,8 +61,6 @@ class PuttingLogApp extends Component {
       shapeXCoordinate: event.target.x(),
       shapeYCoordinate: event.target.y()
     })
-
-    event.preventDefault()
   }
 
   captureNextClick() {
@@ -123,14 +120,28 @@ class PuttingLogApp extends Component {
         shapeXCoordinate: this.state.shapeXCoordinate,
         shapeYCoordinate: this.state.shapeYCoordinate,
         shapeXPosition: positionDetails.x,
-        shapeYPosition: positionDetails.y
+        shapeYPosition: positionDetails.y,
+        activeMetaTags: this.state.activeMetaTags
       }],
       puttCanvasShapes: [...this.state.puttCanvasShapes, puttCanvasShapesJSX],
       holeNum: this.state.holeNum + 1,
       mode: '',
       shapeXCoordinate: 300 / 2,
       shapeYCoordinate: 300 / 2,
+      activeMetaTags: []
     })
+  }
+
+  captureMetaTagClick(event) {
+    if (/active/.test(event.target.className)) {
+      this.setState({
+        activeMetaTags: this.state.activeMetaTags.filter( tag => tag !== event.target.innerText)
+      })
+    } else {
+      this.setState({
+        activeMetaTags: [...this.state.activeMetaTags, event.target.innerText]
+      })
+    }
   }
 
   captureResetClick() {
@@ -140,7 +151,8 @@ class PuttingLogApp extends Component {
       holeNum: 1,
       mode: '',
       shapeXCoordinate: 300 / 2,
-      shapeYCoordinate: 300 / 2
+      shapeYCoordinate: 300 / 2,
+      activeMetaTags: []
     })
   }
 
@@ -178,6 +190,8 @@ class PuttingLogApp extends Component {
                 canvasHeight={this.state.canvasHeight}
                 onClickNext={this.captureNextClick}
                 onClickReset={this.captureResetClick}
+                captureMetaTagClick={this.captureMetaTagClick}
+                metaTagsList={this.props.metaTagsList}
               />}
             />
             <Route

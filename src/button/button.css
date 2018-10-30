@@ -1,4 +1,4 @@
-button {
+.main-btn {
   width: 70px;
   margin: 5px;
   padding: 10px;
@@ -10,7 +10,7 @@ button {
   font-size: .8em;
 }
 
-button:hover {
+.main-btn:hover {
   background-color: #4292c6;
   box-shadow: 2px 2px 3px #2171b5;
   cursor: pointer;

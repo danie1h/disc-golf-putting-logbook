@@ -8,12 +8,12 @@ export const PuttInfo = (props) => {
         <h2 className="putting-details-title">Hole #{props.holeNum}</h2>
         <div className="hit-or-miss">
           <Button
-            className='hit-btn'
+            className='hit-btn main-btn'
             onClick={props.handleHitBtn}
             content='Hit'
           />
           <Button
-            className='miss-btn'
+            className='miss-btn main-btn'
             onClick={props.handleMissBtn}
             content='Miss'
           />

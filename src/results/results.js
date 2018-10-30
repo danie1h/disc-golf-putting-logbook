@@ -11,6 +11,7 @@ class PuttResults extends Component {
           <td>{putt.holeNum}</td>
           <td>{putt.mode}</td>
           <td>{putt.shapeYPosition}, {putt.shapeXPosition}</td>
+          <td>{putt.activeMetaTags.join(', ')}</td>
         </tr>
       )
     })
@@ -38,6 +39,7 @@ class PuttResults extends Component {
                     <th>Hole #</th>
                     <th>Putt Attempt</th>
                     <th>Position</th>
+                    <th>Tags</th>
                   </tr>
                 </thead>
                 <tbody>
