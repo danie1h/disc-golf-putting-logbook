@@ -129,25 +129,24 @@ class LogPutt extends Component {
 
   render () {
     return (
-      <div className='log-putt'>
+      <div id='log-putt'>
         <header className='page-header'>
           <h1 className='title'>Log</h1>
-          <div className='header-options'>
+          <div id='page-header-options-section'>
             <Button
-              className='reset-all-btn'
+              className='page-header-option reset-all-btn'
               onClick={() => {
                 this.props.captureResetClick()
                 this.resetActiveMetaTags()
               }}
               content='Reset All'
             />
-            <Link to='/disc-golf-putting-logbook/results' className='get-results'>Results</Link>
+            <Link to='/disc-golf-putting-logbook/results' className='page-header-option' id='get-results'>Results</Link>
           </div>
         </header>
         <hr className='divider' />
-        <div className='log-putt-controls'>
+        <div id='log-putt-controls'>
           <PuttInfo
-            className='putt-info'
             holeNum={this.props.holeNum}
             handleHitBtn={this.props.handleHitBtn}
             handleMissBtn={this.props.handleMissBtn}

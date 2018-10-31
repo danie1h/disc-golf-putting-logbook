@@ -29,10 +29,10 @@ class PuttResults extends Component {
     })
 
     return (
-      <div className='putting-results'>
+      <div id='putting-results'>
         <header className='page-header'>
           <h1 className='title'>Results</h1>
-          <p className='coming-soon'>More features and stats coming soon!</p>
+          <p id='coming-soon'>More features and stats coming soon!</p>
         </header>
         <hr className='divider' />
         {

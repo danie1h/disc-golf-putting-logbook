@@ -1,13 +1,13 @@
-/* .title and .page-header style is referenced from log-putt.css */
-/* .divider style is referenced from log-putt.css */
-.putting-results {
+/* .title, .divider, and .page-header style is referenced from src/log-putt/log-putt.css */
+/* .canvas-container style is referenced from src/log-putt/display-putt/display-putt.css */
+#putting-results {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 25px 10px 0 10px;
 }
 
-.coming-soon {
+#coming-soon {
   color: green;
   font-size: .6em;
   margin: 5px 0 5px 0;
@@ -26,14 +26,6 @@
   align-items: center;
 }
 
-.canvas-container {
-  margin: 5px;
-  width: 300px;
-  border: 3px solid gray;
-  border-radius: 15px;
-  background-image: url('../resources/images/DG_Basket.png')
-}
-
 .data-table {
   width: 300px;
   margin: 5px;
@@ -41,7 +33,7 @@
 }
 
 @media only screen and (min-width: 480px) {
-  .coming-soon {
+  #coming-soon {
     font-size: 1em;
   }
 

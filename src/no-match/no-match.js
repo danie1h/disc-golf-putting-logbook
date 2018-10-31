@@ -9,8 +9,8 @@ import './no-match.css'
  */
 export const NoMatch = () => {
   return (
-    <div className='no-match'>
-      <h1 className='title'>404 Error: Page Not Found</h1>
+    <div id='no-match-container'>
+      <h1 id='no-match-title'>404 Error: Page Not Found</h1>
     </div>
   )
 }

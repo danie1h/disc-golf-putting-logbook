@@ -1,5 +1,5 @@
-/* .divider style is referenced from log-putt.css */
-.log-putt {
+/* provides styles of .title, .divider, and .page-header classes to src/about/about.css */
+#log-putt {
   margin: 25px 10px 0 10px;
   display: flex;
   flex-direction: column;
@@ -7,6 +7,7 @@
 }
 
 .page-header {
+  width: 300px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,13 +19,13 @@
   font-size: 1.25em;
 }
 
-hr {
+.divider {
   width: 350px;
   margin-top: 0;
   margin-bottom: 25px;
 }
 
-.get-results, .reset-all-btn {
+.page-header-option {
   margin: 5px;
   padding: 0px;
   background-color: white;
@@ -32,13 +33,10 @@ hr {
   box-shadow: none;
   text-decoration: none;
   font-size: .8em;
-}
-
-.reset-all-btn {
   border: none;
 }
 
-.log-putt-controls {
+#log-putt-controls {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,28 +46,13 @@ hr {
   width: 300px;
 }
 
-.tag-btn {
-  margin: 2px 4px;
-  padding: 2px 8px 2px 8px;
-  background-color: #d9d9d9;
-  border: none;
-  border-radius: 2px;
-  box-shadow: 1px 1px 2px black;
-}
-
-.tag-btn:hover {
-  color: #d9d9d9;
-  background-color: #525252;
-  border-color: #252525;
-}
-
 .active {
   color: #d9d9d9;
   background-color: #006622;
   border-color: #00441b;
 }
 
-.get-results:hover, .reset-all-btn:hover {
+.page-header-option:hover {
   color: #006622;
   background-color: white;
   box-shadow: none;
@@ -79,10 +62,26 @@ hr {
   .title {
     font-size: 1.5em;
   }
+
+  .page-header {
+    width: 450px;
+  }
+
+  .divider {
+    width: 480px;
+  }
 }
 
 @media only screen and (min-width: 700px) {
   .title {
     font-size: 2em;
+  }
+
+  .page-header {
+    width: 700px;
+  }
+
+  .divider {
+    width: 750px;
   }
 }

@@ -12,9 +12,9 @@ import './putt-info.css'
  */
 export const PuttInfo = (props) => {
   return (
-    <div className='putting-details'>
-      <h2 className='putting-details-title'>Hole #{props.holeNum}</h2>
-      <div className='hit-or-miss'>
+    <div id='putting-info'>
+      <h2 id='putting-info-title'>Hole #{props.holeNum}</h2>
+      <div id='hit-or-miss-btns'>
         <Button
           className='hit-btn main-btn'
           onClick={props.handleHitBtn}

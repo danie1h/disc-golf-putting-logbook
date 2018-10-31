@@ -1,17 +1,17 @@
-.putting-details-title {
+#putting-info-title {
   text-align: center;
   margin: 5px 0 5px 0;
   font-size: 1.1em;
 }
 
 @media only screen and (min-width: 480px) {
-  .putting-details-title {
+  #putting-info-title {
     font-size: 1.25em;
   }
 }
 
 @media only screen and (min-width: 700px) {
-  .putting-details-title {
+  #putting-info-title {
     font-size: 1.5em;
   }
 }
