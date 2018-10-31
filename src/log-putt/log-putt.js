@@ -141,7 +141,7 @@ class LogPutt extends Component {
               }}
               content='Reset All'
             />
-            <Link to='/disc-golf-putting-logbook/results' className='page-header-option' id='get-results'>Results</Link>
+            <Link to={process.env.PUBLIC_URL + '/results'} className='page-header-option' id='get-results'>Results</Link>
           </div>
         </header>
         <hr className='divider' />

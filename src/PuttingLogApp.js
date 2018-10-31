@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import { Circle, Star } from 'react-konva'
 import { Home } from './home/home.js'
 import { About } from './about/about.js'
@@ -216,21 +216,21 @@ class PuttingLogApp extends Component {
         <div className='putting-log-app'>
           <header className='header-container'>
             <div className='header-home'>
-              <Link to='/disc-golf-putting-logbook/' className='header-logo'><img className='logo' src={plLogo} width='25' height='25' alt='logo' /></Link>
-              <Link to='/disc-golf-putting-logbook/' className='header-title'>Putting Logbook</Link>
+              <Link to={process.env.PUBLIC_URL + '/'} className='header-logo'><img className='logo' src={plLogo} width='25' height='25' alt='logo' /></Link>
+              <Link to={process.env.PUBLIC_URL + '/'} className='header-title'>Putting Logbook</Link>
             </div>
             <nav className='header-nav'>
-              <Link to='/disc-golf-putting-logbook/about' className='header-about'>About</Link>
-              <Link to='/disc-golf-putting-logbook/log' className='header-log'>Log</Link>
-              <Link to='/disc-golf-putting-logbook/results' className='header-results'>Results</Link>
+              <Link to={process.env.PUBLIC_URL + '/about'} className='header-about'>About</Link>
+              <Link to={process.env.PUBLIC_URL + '/log'} className='header-log'>Log</Link>
+              <Link to={process.env.PUBLIC_URL + '/results'} className='header-results'>Results</Link>
             </nav>
           </header>
 
           <Switch>
-            <Route exact path='/disc-golf-putting-logbook/' component={Home} />
-            <Route exact path='/disc-golf-putting-logbook/about' component={About} />
+            <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
+            <Route exact path={process.env.PUBLIC_URL + '/about'} component={About} />
             <Route
-              path='/disc-golf-putting-logbook/log'
+              path={process.env.PUBLIC_URL + '/log'}
               render={props => <LogPutt {...props}
                 holeNum={this.state.holeNum}
                 handleHitBtn={this.handleHitBtn}
@@ -249,7 +249,7 @@ class PuttingLogApp extends Component {
               />}
             />
             <Route
-              path='/disc-golf-putting-logbook/results'
+              exact path={process.env.PUBLIC_URL + '/results'}
               render={props => <PuttResults {...props}
                 puttLog={this.state.puttLog}
                 canvasWidth={this.state.canvasWidth}

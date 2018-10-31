@@ -62,7 +62,7 @@ class PuttResults extends Component {
               </div>
             )
             : (
-              <p id='no-data'>No Data Available. Log your putts <Link to='/disc-golf-putting-logbook/log'>here</Link>, then check your results.</p>
+              <p id='no-data'>No Data Available. Log your putts <Link to={process.env.PUBLIC_URL + '/log'}>here</Link>, then check your results.</p>
             )
         }
       </div>
