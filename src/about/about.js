@@ -1,6 +1,14 @@
 import React from 'react'
 import './about.css'
 
+/**
+ * Returns the content of the About page
+ * * An overview of disc golf and the value of the Putting Logbook
+ * * Additional disc golf resources
+ *
+ * @version 0.1.0
+ * @author [danie1h](https://github.com/danie1h)
+ */
 export const About = () => {
   return (
     <article className='about'>

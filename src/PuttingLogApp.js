@@ -7,21 +7,39 @@ import LogPutt from './log-putt/log-putt.js'
 import PuttResults from './results/results.js'
 import { NoMatch } from './no-match/no-match.js'
 import plLogo from './resources/images/pl-logo.png'
+import PropTypes from 'prop-types'
 import './PuttingLogApp.css'
 
+/**
+ * Main component
+ * * Constructs a header menu bar
+ * * Handles routing and transmits state to child pages: home, about, log, results
+ *
+ * @version 0.1.0
+ * @author [danie1h](https://github.com/danie1h)
+ */
 class PuttingLogApp extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
+      /** List of submitted putts and putt details */
       puttLog: [],
+      /** List of logged putting shapes to display on the canvas */
       puttCanvasShapes: [],
+      /** Indicates the current hole number the user is logging their putt */
       holeNum: 1,
+      /** Stores the hit or miss string, which determines what shape to render */
       mode: '',
+      /** The width at which the canvas is rendered */
       canvasWidth: 300,
+      /** The height at which the canvas is rendered */
       canvasHeight: 300,
+      /** x coordinate of the rendered shape. Default is in the center of the canvas. Updated based on user drag or click. */
       shapeXCoordinate: 300 / 2,
+      /** y coordinate of the rendered shape. Default is in the center of the canvas. Updated based on user drag or click. */
       shapeYCoordinate: 300 / 2,
+      /** List of meta tag strings to output in the putting log data table */
       activeMetaTags: []
     }
 
@@ -34,18 +52,33 @@ class PuttingLogApp extends Component {
     this.captureResetClick = this.captureResetClick.bind(this)
   }
 
+  /**
+ * Changes the mode to 'hit' and renders a green circle on the canvas
+ *
+ * @public
+ */
   handleHitBtn () {
     this.setState({
       mode: 'hit'
     })
   }
 
+  /**
+ * Changes the mode to 'miss' and renders a green circle on the canvas
+ *
+ * @public
+ */
   handleMissBtn () {
     this.setState({
       mode: 'miss'
     })
   }
 
+  /**
+ * Captures where the user last clicked on the canvas and updates the shape position
+ *
+ * @public
+ */
   captureCanvasClick (event) {
     let canvasOffsetLeft = document.getElementsByClassName('konvajs-content')[0].offsetLeft
     let canvasOffsetTop = document.getElementsByClassName('konvajs-content')[0].offsetTop
@@ -56,6 +89,11 @@ class PuttingLogApp extends Component {
     })
   }
 
+  /**
+ * Captures where the user last dragged the shape and updates the shape position
+ *
+ * @public
+ */
   captureCanvasDrag (event) {
     this.setState({
       shapeXCoordinate: event.target.x(),
@@ -63,6 +101,11 @@ class PuttingLogApp extends Component {
     })
   }
 
+  /**
+ * Stores the current putt information (coordinates, shape, holeNum, active meta tags), increments holeNum and sets blank state properties for the next hole
+ *
+ * @public
+ */
   captureNextClick () {
     function getPosition (width, height, xCoordinate, yCoordinate, rangePercentage) {
       let widthCenter = width / 2
@@ -133,6 +176,11 @@ class PuttingLogApp extends Component {
     })
   }
 
+  /**
+ * When the user clicks a meta tag that tag value is stored so that it can be used/displayed in results
+ *
+ * @public
+ */
   captureMetaTagClick (event) {
     if (/active/.test(event.target.className)) {
       this.setState({
@@ -145,6 +193,11 @@ class PuttingLogApp extends Component {
     }
   }
 
+  /**
+ * Clears all putts logged
+ *
+ * @public
+ */
   captureResetClick () {
     this.setState({
       puttLog: [],
@@ -189,8 +242,8 @@ class PuttingLogApp extends Component {
                 captureCanvasClick={this.captureCanvasClick}
                 canvasWidth={this.state.canvasWidth}
                 canvasHeight={this.state.canvasHeight}
-                onClickNext={this.captureNextClick}
-                onClickReset={this.captureResetClick}
+                captureNextClick={this.captureNextClick}
+                captureResetClick={this.captureResetClick}
                 captureMetaTagClick={this.captureMetaTagClick}
                 metaTagsList={this.props.metaTagsList}
               />}
@@ -213,3 +266,8 @@ class PuttingLogApp extends Component {
 }
 
 export default PuttingLogApp
+
+PuttingLogApp.propTypes = {
+  /** List of meta tags for user to select on each putt logged */
+  metaTagsList: PropTypes.array
+}
