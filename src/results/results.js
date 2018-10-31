@@ -49,8 +49,8 @@ class PuttResults extends Component {
                 <table className='data-table'>
                   <thead>
                     <tr>
-                      <th>Hole #</th>
-                      <th>Putt Attempt</th>
+                      <th>Hole</th>
+                      <th>Attempt</th>
                       <th>Position</th>
                       <th>Tags</th>
                     </tr>
