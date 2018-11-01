@@ -2,7 +2,7 @@
   "name": "putting-logbook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://danie1h.github.io/disc-golf-putting-logbook/",
+  "homepage": "https://danie1h.github.io/putting-logbook/",
   "dependencies": {
     "ajv": "^6.5.4",
     "konva": "^2.4.2",
