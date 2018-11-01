@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'mdbreact'
+import { Link } from 'react-router-dom'
 import './home.css'
 
 /**
@@ -16,8 +16,8 @@ export const Home = () => {
       <h1 className='app-title blue-grey-text'>Disc Golf Putting Logbook</h1>
       <h2 className='app-secondary-title grey-text'>Log Putts, View Stats, Improve Your Game, Repeat</h2>
       <div>
-        <Button href={process.env.PUBLIC_URL + '/#/about'}>Learn More</Button>
-        <Button href={process.env.PUBLIC_URL + '/#/log'}>Get Started</Button>
+        <Link to={process.env.PUBLIC_URL + '/about'} className='btn btn-default Ripple-parent'>Learn More</Link>
+        <Link to={process.env.PUBLIC_URL + '/log'} className='btn btn-default Ripple-parent'>Get Started</Link>
       </div>
     </div>
   )
