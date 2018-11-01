@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/disc-golf-putting-logbook/static/media/Roboto-Medium.4d9f3f9e.eot"
   },
   {
-    "revision": "ee60ec26e3bcf90e5a84",
+    "revision": "bc858ba9a3a63d1dfb44",
     "url": "/disc-golf-putting-logbook/static/css/main.9813ad42.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/disc-golf-putting-logbook/static/media/Roboto-Bold.e31fcf18.ttf"
   },
   {
-    "revision": "043deb1eb47263e8c6fc",
-    "url": "/disc-golf-putting-logbook/static/js/1.043deb1e.chunk.js"
+    "revision": "b25daad6d52e9b7c4e4e",
+    "url": "/disc-golf-putting-logbook/static/js/1.b25daad6.chunk.js"
   },
   {
     "revision": "d1ec00158b33d5a1386e",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/disc-golf-putting-logbook/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "674f50d287a8c48dc19ba404d20fe713",
-    "url": "/disc-golf-putting-logbook/static/media/fontawesome-webfont.674f50d2.eot"
-  },
-  {
     "revision": "b06871f281fee6b241d60582ae9369b9",
     "url": "/disc-golf-putting-logbook/static/media/fontawesome-webfont.b06871f2.ttf"
+  },
+  {
+    "revision": "674f50d287a8c48dc19ba404d20fe713",
+    "url": "/disc-golf-putting-logbook/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
     "revision": "912ec66d7572ff821749319396470bde",
@@ -68,8 +68,8 @@ self.__precacheManifest = [
     "url": "/disc-golf-putting-logbook/static/media/Roboto-Regular.30799efa.eot"
   },
   {
-    "revision": "ee60ec26e3bcf90e5a84",
-    "url": "/disc-golf-putting-logbook/static/js/main.ee60ec26.chunk.js"
+    "revision": "bc858ba9a3a63d1dfb44",
+    "url": "/disc-golf-putting-logbook/static/js/main.bc858ba9.chunk.js"
   },
   {
     "revision": "ecdd509cadbf1ea78b8d2e31ec52328c",
@@ -132,11 +132,11 @@ self.__precacheManifest = [
     "url": "/disc-golf-putting-logbook/static/media/Roboto-Medium.894a2ede.ttf"
   },
   {
-    "revision": "043deb1eb47263e8c6fc",
+    "revision": "b25daad6d52e9b7c4e4e",
     "url": "/disc-golf-putting-logbook/static/css/1.56973081.chunk.css"
   },
   {
-    "revision": "e3c7c6fd7b8adf6748cd39fbe0fdf025",
+    "revision": "c4b59f827d5c7eae61efd7bd6c390eef",
     "url": "/disc-golf-putting-logbook/index.html"
   }
 ];
