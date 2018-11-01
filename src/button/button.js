@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import './button.css'
 
 /**
  * Returns a button based on the provided property parameters
@@ -9,7 +8,6 @@ import './button.css'
  * @author [danie1h](https://github.com/danie1h)
  */
 export const Button = (props) => {
-  console.log(typeof <button />)
   return (
     <button className={props.className} onClick={props.onClick}>{props.content}</button>
   )

@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
-import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
+import { PuttLogNavbar } from './putt-log-navbar/putt-log-navbar.js'
 import { Circle, Star } from 'react-konva'
 import { Home } from './home/home.js'
 import { About } from './about/about.js'
 import LogPutt from './log-putt/log-putt.js'
 import PuttResults from './results/results.js'
 import { NoMatch } from './no-match/no-match.js'
-import plLogo from './resources/images/pl-logo.png'
 import PropTypes from 'prop-types'
-import './PuttingLogApp.css'
 
 /**
  * Main component
@@ -80,9 +79,16 @@ class PuttingLogApp extends Component {
  * @public
  */
   captureCanvasClick (event) {
-    let canvasOffsetLeft = document.getElementsByClassName('konvajs-content')[0].offsetLeft
-    let canvasOffsetTop = document.getElementsByClassName('konvajs-content')[0].offsetTop
-
+    let parentHTMLNode = document.getElementsByClassName('konvajs-content')[0].offsetParent
+    let currentHTMLNode = document.getElementsByClassName('konvajs-content')[0]
+    let canvasOffsetLeft = currentHTMLNode.offsetLeft
+    let canvasOffsetTop = currentHTMLNode.offsetTop
+    while (parentHTMLNode.nodeName !== 'BODY') {
+      currentHTMLNode = parentHTMLNode
+      parentHTMLNode = parentHTMLNode.offsetParent
+      canvasOffsetLeft += currentHTMLNode.offsetLeft
+      canvasOffsetTop += currentHTMLNode.offsetTop
+    }
     this.setState({
       shapeXCoordinate: event.clientX - canvasOffsetLeft,
       shapeYCoordinate: event.pageY - canvasOffsetTop
@@ -184,11 +190,11 @@ class PuttingLogApp extends Component {
   captureMetaTagClick (event) {
     if (/active/.test(event.target.className)) {
       this.setState({
-        activeMetaTags: this.state.activeMetaTags.filter(tag => tag !== event.target.innerText)
+        activeMetaTags: this.state.activeMetaTags.filter(tag => tag !== event.target.innerHTML)
       })
     } else {
       this.setState({
-        activeMetaTags: [...this.state.activeMetaTags, event.target.innerText]
+        activeMetaTags: [...this.state.activeMetaTags, event.target.innerHTML]
       })
     }
   }
@@ -214,18 +220,7 @@ class PuttingLogApp extends Component {
     return (
       <Router>
         <div className='putting-log-app'>
-          <header className='header-container'>
-            <div className='header-home'>
-              <Link to={process.env.PUBLIC_URL + '/'} className='header-logo'><img className='logo' src={plLogo} width='25' height='25' alt='logo' /></Link>
-              <Link to={process.env.PUBLIC_URL + '/'} className='header-title'>Putting Logbook</Link>
-            </div>
-            <nav className='header-nav'>
-              <Link to={process.env.PUBLIC_URL + '/about'} className='header-about'>About</Link>
-              <Link to={process.env.PUBLIC_URL + '/log'} className='header-log'>Log</Link>
-              <Link to={process.env.PUBLIC_URL + '/results'} className='header-results'>Results</Link>
-            </nav>
-          </header>
-
+          <PuttLogNavbar />
           <Switch>
             <Route exact path={process.env.PUBLIC_URL + '/'} component={Home} />
             <Route exact path={process.env.PUBLIC_URL + '/about'} component={About} />

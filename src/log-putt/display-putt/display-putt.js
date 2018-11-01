@@ -19,14 +19,12 @@ export const DisplayPutt = (props) => {
       : <Line />
 
   return (
-    <div className='track-putt'>
-      <div className='canvas-container' onClick={props.captureCanvasClick}>
-        <Stage width={props.canvasWidth} height={props.canvasHeight}>
-          <Layer>
-            {shape}
-          </Layer>
-        </Stage>
-      </div>
+    <div className='canvas-container m-2' onClick={props.captureCanvasClick}>
+      <Stage width={props.canvasWidth} height={props.canvasHeight}>
+        <Layer>
+          {shape}
+        </Layer>
+      </Stage>
     </div>
   )
 }

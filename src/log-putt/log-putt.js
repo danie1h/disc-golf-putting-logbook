@@ -4,7 +4,6 @@ import { DisplayPutt } from './display-putt/display-putt.js'
 import { Button } from '../button/button.js'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import './log-putt.css'
 
 /**
  * Returns the content of the Log page
@@ -29,7 +28,7 @@ class LogPutt extends Component {
         return (
           <Button
             key={index}
-            className='tag-btn'
+            className='btn btn-blue-grey btn-sm'
             content={tag}
             onClick={(event) => {
               this.props.captureMetaTagClick(event)
@@ -54,7 +53,7 @@ class LogPutt extends Component {
  */
   activateMetaTags (event) {
     const clickedTagIndex = this.state.metaTagOutput.findIndex(item => {
-      return event.target.innerText === item.props.content
+      return event.target.innerHTML === item.props.content
     })
 
     if (this.state.activeTagIndexList.includes(clickedTagIndex)) {
@@ -101,7 +100,7 @@ class LogPutt extends Component {
         return (
           <Button
             key={index}
-            className='tag-btn active'
+            className='btn btn-dark-green btn-sm active'
             content={tag}
             onClick={(event) => {
               this.props.captureMetaTagClick(event)
@@ -113,7 +112,7 @@ class LogPutt extends Component {
         return (
           <Button
             key={index}
-            className='tag-btn'
+            className='btn btn-blue-grey btn-sm'
             content={tag}
             onClick={(event) => {
               this.props.captureMetaTagClick(event)
@@ -130,47 +129,68 @@ class LogPutt extends Component {
   render () {
     return (
       <div id='log-putt'>
-        <header className='page-header'>
-          <h1 className='title'>Log</h1>
-          <div id='page-header-options-section'>
-            <Button
-              className='page-header-option reset-all-btn'
-              onClick={() => {
-                this.props.captureResetClick()
-                this.resetActiveMetaTags()
-              }}
-              content='Reset All'
-            />
-            <Link to={process.env.PUBLIC_URL + '/results'} className='page-header-option' id='get-results'>Results</Link>
+        <div id='log-putt' className='container-fluid mt-4 px-5 animated fadeInLeft fast'>
+          <header>
+            <div className='row'>
+              <div className='col'>
+                <h1 className='blue-grey-text h1-responsive'>Log</h1>
+              </div>
+              <div className='col d-flex flex-row align-items-center justify-content-end'>
+                <a className='blue-text px-2'
+                  onClick={() => {
+                    this.props.captureResetClick()
+                    this.resetActiveMetaTags()
+                  }}>Reset
+                </a>
+                <Link to={process.env.PUBLIC_URL + '/results'} className='blue-text px-2'>Results</Link>
+              </div>
+            </div>
+          </header>
+          <div className='row mb-3'>
+            <div className='col'>
+              <hr className='my-2' />
+            </div>
           </div>
-        </header>
-        <hr className='divider' />
-        <div id='log-putt-controls'>
-          <PuttInfo
-            holeNum={this.props.holeNum}
-            handleHitBtn={this.props.handleHitBtn}
-            handleMissBtn={this.props.handleMissBtn}
-          />
-          <DisplayPutt
-            mode={this.props.mode}
-            x={this.props.x}
-            y={this.props.y}
-            captureCanvasDrag={this.props.captureCanvasDrag}
-            captureCanvasClick={this.props.captureCanvasClick}
-            canvasWidth={this.props.canvasWidth}
-            canvasHeight={this.props.canvasHeight}
-          />
-          <div className='tags'>
-            {this.state.metaTagOutput}
+          <div className='row my-1'>
+            <div className='col'>
+              <PuttInfo
+                holeNum={this.props.holeNum}
+                handleHitBtn={this.props.handleHitBtn}
+                handleMissBtn={this.props.handleMissBtn}
+              />
+            </div>
           </div>
-          <Button
-            className='next-btn main-btn'
-            onClick={() => {
-              this.props.captureNextClick()
-              this.resetActiveMetaTags()
-            }}
-            content='Next'
-          />
+          { /* Keep display-putt-parent class unique for processing canvas click. See logic in captureCanvasClick of src/PuttingLogApp.js  */ }
+          <div className='display-putt-parent row my-1'>
+            <div className='display-putt-parent col d-flex flex-row justify-content-center'>
+              <DisplayPutt
+                mode={this.props.mode}
+                x={this.props.x}
+                y={this.props.y}
+                captureCanvasDrag={this.props.captureCanvasDrag}
+                captureCanvasClick={this.props.captureCanvasClick}
+                canvasWidth={this.props.canvasWidth}
+                canvasHeight={this.props.canvasHeight}
+              />
+            </div>
+          </div>
+          <div className='row my-2 d-flex flex-row justify-content-center'>
+            <div className='col-sm-8 col-md-6 col-lg-4'>
+              {this.state.metaTagOutput}
+            </div>
+          </div>
+          <div className='row mt-1 mb-3 text-center'>
+            <div className='col'>
+              <Button
+                className='btn btn-default'
+                onClick={() => {
+                  this.props.captureNextClick()
+                  this.resetActiveMetaTags()
+                }}
+                content='Next'
+              />
+            </div>
+          </div>
         </div>
       </div>
     )

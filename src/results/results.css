@@ -1,29 +1,6 @@
-/* .title, .divider, and .page-header style is referenced from src/log-putt/log-putt.css */
 /* .canvas-container style is referenced from src/log-putt/display-putt/display-putt.css */
-#putting-results {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 25px 10px 0 10px;
-}
-
 #coming-soon {
-  color: green;
   font-size: .6em;
-  margin: 5px 0 5px 0;
-}
-
-#no-data {
-  margin: 10px 0 10px 0;
-  font-size: .7em;
-  padding: 0 10px 0 10px;
-  text-align: center;
-}
-
-#valid-putting-results {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .data-table {
@@ -76,11 +53,7 @@ tbody tr:nth-child(even) {
 
 @media only screen and (min-width: 480px) {
   #coming-soon {
-    font-size: 1em;
-  }
-
-  #no-data {
-    font-size: 1em;
+    font-size: .8em;
   }
 
   .data-table {
@@ -99,5 +72,9 @@ tbody tr:nth-child(even) {
 @media only screen and (min-width: 700px) {
   .data-table {
     width: 700px;
+  }
+
+  #coming-soon {
+    font-size: .9em;
   }
 }

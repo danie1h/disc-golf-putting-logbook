@@ -1,7 +1,6 @@
 import React from 'react'
 import { Button } from '../../button/button.js'
 import PropTypes from 'prop-types'
-import './putt-info.css'
 
 /**
  * Returns the content of hole information on the Log page
@@ -13,18 +12,24 @@ import './putt-info.css'
 export const PuttInfo = (props) => {
   return (
     <div id='putting-info'>
-      <h2 id='putting-info-title'>Hole #{props.holeNum}</h2>
-      <div id='hit-or-miss-btns'>
-        <Button
-          className='hit-btn main-btn'
-          onClick={props.handleHitBtn}
-          content='Hit'
-        />
-        <Button
-          className='miss-btn main-btn'
-          onClick={props.handleMissBtn}
-          content='Miss'
-        />
+      <div className='row'>
+        <div className='col'>
+          <h2 id='putting-info-title' className='h3-responsive text-center blue-grey-text'>Hole #{props.holeNum}</h2>
+        </div>
+      </div>
+      <div className='row text-center'>
+        <div className='col'>
+          <Button
+            className='hit-btn btn btn-default'
+            onClick={props.handleHitBtn}
+            content='Hit'
+          />
+          <Button
+            className='miss-btn btn btn-default'
+            onClick={props.handleMissBtn}
+            content='Miss'
+          />
+        </div>
       </div>
     </div>
   )

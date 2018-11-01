@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Button } from 'mdbreact'
 import './home.css'
 
 /**
@@ -12,12 +12,12 @@ import './home.css'
  */
 export const Home = () => {
   return (
-    <div className='home'>
-      <h1 className='title'>Disc Golf Putting Logbook</h1>
-      <h2 className='description'>Log Putts, View Stats, Improve Your Game, Repeat</h2>
-      <div className='home-link-items'>
-        <Link to={process.env.PUBLIC_URL + '/about'} id='learn-more' className='home-link'>Learn More</Link>
-        <Link to={process.env.PUBLIC_URL + '/log'} id='get-started' className='home-link'>Get Started</Link>
+    <div id='home' className='container-fluid mt-4 d-flex flex-column align-items-center animated zoomIn fast'>
+      <h1 className='app-title blue-grey-text'>Disc Golf Putting Logbook</h1>
+      <h2 className='app-secondary-title grey-text'>Log Putts, View Stats, Improve Your Game, Repeat</h2>
+      <div>
+        <Button href={process.env.PUBLIC_URL + '/#/about'}>Learn More</Button>
+        <Button href={process.env.PUBLIC_URL + '/#/log'}>Get Started</Button>
       </div>
     </div>
   )

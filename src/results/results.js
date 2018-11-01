@@ -29,40 +29,63 @@ class PuttResults extends Component {
     })
 
     return (
-      <div id='putting-results'>
-        <header className='page-header'>
-          <h1 className='title'>Results</h1>
-          <p id='coming-soon'>More features and stats coming soon!</p>
+      <div id='putting-results' className='container-fluid mt-4 px-5 animated fadeInLeft fast'>
+
+        <header>
+          <div className='row'>
+            <div className='col'>
+              <h1 className='blue-grey-text h1-responsive'>Log</h1>
+            </div>
+            <div className='col d-flex flex-row justify-content-end align-items-center'>
+              <p id='coming-soon' className='green-text'>More features and stats coming soon!</p>
+            </div>
+          </div>
+          <div className='row mb-3'>
+            <div className='col'>
+              <hr className='my-2' />
+            </div>
+          </div>
         </header>
-        <hr className='divider' />
         {
           (puttDataList.length > 0)
             ? (
-              <div id='valid-putting-results'>
-                <div className='canvas-container'>
-                  <Stage width={this.props.canvasWidth} height={this.props.canvasHeight}>
-                    <Layer>
-                      {this.props.puttCanvasShapes}
-                    </Layer>
-                  </Stage>
+              <div id='results-data'>
+                <div className='row my-1'>
+                  <div className='col d-flex flex-row justify-content-center'>
+                    <div className='canvas-container'>
+                      <Stage width={this.props.canvasWidth} height={this.props.canvasHeight}>
+                        <Layer>
+                          {this.props.puttCanvasShapes}
+                        </Layer>
+                      </Stage>
+                    </div>
+                  </div>
                 </div>
-                <table className='data-table'>
-                  <thead>
-                    <tr>
-                      <th>Hole</th>
-                      <th>Attempt</th>
-                      <th>Position</th>
-                      <th>Tags</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {puttDataList}
-                  </tbody>
-                </table>
+                <div className='row my-1'>
+                  <div className='col d-flex flex-row justify-content-center'>
+                    <table className='data-table'>
+                      <thead>
+                        <tr>
+                          <th>Hole</th>
+                          <th>Attempt</th>
+                          <th>Position</th>
+                          <th>Tags</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {puttDataList}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             )
             : (
-              <p id='no-data'>No Data Available. Log your putts <Link to={process.env.PUBLIC_URL + '/log'}>here</Link>, then check your results.</p>
+              <div className='row my-1'>
+                <div className='col text-center'>
+                  <p id='no-data'>No Data Available. Log your putts <Link to={process.env.PUBLIC_URL + '/log'}>here</Link>, then check your results.</p>
+                </div>
+              </div>
             )
         }
       </div>
