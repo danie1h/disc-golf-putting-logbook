@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom'
-import { PuttLogNavbar } from './putt-log-navbar/putt-log-navbar.js'
+import PuttLogNavbar from './putt-log-navbar/putt-log-navbar.js'
 import { Circle, Star } from 'react-konva'
 import { Home } from './home/home.js'
 import { About } from './about/about.js'
