@@ -29,7 +29,7 @@ class LogPutt extends Component {
         return (
           <Button
             key={index}
-            className='btn btn-blue-grey btn-sm'
+            className='btn btn-blue-grey btn-sm p-2 m-1'
             content={tag}
             onClick={(event) => {
               this.props.captureMetaTagClick(event)
@@ -101,7 +101,7 @@ class LogPutt extends Component {
         return (
           <Button
             key={index}
-            className='btn btn-dark-green btn-sm active'
+            className='btn btn-dark-green btn-sm p-2 m-1 active'
             content={tag}
             onClick={(event) => {
               this.props.captureMetaTagClick(event)
@@ -113,7 +113,7 @@ class LogPutt extends Component {
         return (
           <Button
             key={index}
-            className='btn btn-blue-grey btn-sm'
+            className='btn btn-blue-grey btn-sm p-2 m-1'
             content={tag}
             onClick={(event) => {
               this.props.captureMetaTagClick(event)
@@ -176,7 +176,7 @@ class LogPutt extends Component {
             </div>
           </div>
           <div className='row my-2 d-flex flex-row justify-content-center'>
-            <div className='col-sm-8 col-md-6 col-lg-4'>
+            <div className='col-sm-8 col-md-6 col-lg-4 text-center'>
               {this.state.metaTagOutput}
             </div>
           </div>

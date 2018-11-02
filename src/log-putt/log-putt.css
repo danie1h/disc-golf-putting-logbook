@@ -2,3 +2,13 @@
   color: #607d8b !important;
   cursor: pointer;
 }
+
+.btn-sm {
+  font-size: .5em !important;
+}
+
+@media only screen and (min-width: 480px) {
+  .btn-sm {
+    font-size: .7em !important;
+  }
+}
