@@ -4,6 +4,7 @@ import { DisplayPutt } from './display-putt/display-putt.js'
 import { Button } from '../button/button.js'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import './log-putt.css'
 
 /**
  * Returns the content of the Log page
@@ -136,13 +137,13 @@ class LogPutt extends Component {
                 <h1 className='blue-grey-text h1-responsive'>Log</h1>
               </div>
               <div className='col d-flex flex-row align-items-center justify-content-end'>
-                <a className='blue-text px-2'
+                <p className='blue-text px-2 m-0 header-controls'
                   onClick={() => {
                     this.props.captureResetClick()
                     this.resetActiveMetaTags()
                   }}>Reset
-                </a>
-                <Link to={process.env.PUBLIC_URL + '/results'} className='blue-text px-2'>Results</Link>
+                </p>
+                <Link to={process.env.PUBLIC_URL + '/results'} className='blue-text px-2 header-controls'>Results</Link>
               </div>
             </div>
           </header>

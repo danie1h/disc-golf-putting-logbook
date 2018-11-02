@@ -33,11 +33,11 @@ class PuttResults extends Component {
 
         <header>
           <div className='row'>
-            <div className='col'>
-              <h1 className='blue-grey-text h1-responsive'>Log</h1>
+            <div className='col-4'>
+              <h1 className='blue-grey-text h1-responsive'>Results</h1>
             </div>
-            <div className='col d-flex flex-row justify-content-end align-items-center'>
-              <p id='coming-soon' className='green-text'>More features and stats coming soon!</p>
+            <div className='col-8 d-flex flex-row justify-content-end align-items-center'>
+              <p id='coming-soon' className='green-text m-0'>More features coming soon!</p>
             </div>
           </div>
           <div className='row mb-3'>
