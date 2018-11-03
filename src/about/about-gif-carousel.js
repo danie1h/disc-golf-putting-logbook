@@ -1,6 +1,5 @@
 import React from 'react'
-import { Carousel, CarouselCaption, CarouselInner, CarouselItem, View, Mask } from 'mdbreact'
-import testGIF from '../resources/images/14-ggp-putt.GIF'
+import { Carousel, CarouselCaption, CarouselInner, CarouselItem, View } from 'mdbreact'
 
 /**
  * Returns a carousel of putting gifs for the About page
@@ -21,8 +20,9 @@ export const AboutGIFCarousel = () => {
         <CarouselInner>
           <CarouselItem itemId='1'>
             <View>
-              <img className='d-block w-100' src={testGIF} alt='putting gif' />
-              <Mask overlay='stylish-slight' />
+              <video className='d-block w-100' autoPlay loop>
+                <source src='https://res.cloudinary.com/joeschmoe1/video/upload/e_overlay,f_auto,q_auto/v1541267299/putting-logbook/14-ggp-putt.mp4' type='video/mp4' />
+              </video>
             </View>
             <CarouselCaption>
               <h3 className='h3-responsive'>Hole 14 @ Golden Gate Park</h3>

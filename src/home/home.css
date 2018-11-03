@@ -1,5 +1,5 @@
 #home {
-  background: url(../../src/resources/images/5-ggp-basket.jpg);
+  background: url(https://res.cloudinary.com/joeschmoe1/image/upload/f_auto,q_auto/v1541266824/putting-logbook/9-ggp.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -50,20 +50,5 @@
 
   #home-content {
     padding: 20px;
-  }
-
-  #home {
-    background: url(../../src/resources/images/9-ggp.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    height: 100vh;
-    width: 100vw;
-    z-index: -2;
-    margin: 0;
-    padding: 0;
   }
 }

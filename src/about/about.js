@@ -1,10 +1,6 @@
 import React from 'react'
 import { ListGroup, ListGroupItem } from 'mdbreact'
 import { AboutGIFCarousel } from './about-gif-carousel.js'
-import lingoIcon from '../resources/images/lingo-icon.png'
-import tipsIcon from '../resources/images/tips-icon.png'
-import drillIcon from '../resources/images/drill-icon.png'
-import gameIcon from '../resources/images/game-icon.png'
 
 /**
  * Returns the content of the About page
@@ -56,10 +52,22 @@ export const About = () => {
           <div className='row mb-4'>
             <div className='col px-4'>
               <ListGroup>
-                <ListGroupItem className='list-group-item text-default text-center' hover href='https://www.innovadiscs.com/home/disc-golf-faq/glossary-of-terms/' target='_blank' rel='noopener noreferrer'><img className='pr-2' src={lingoIcon} alt='lingo icon' height='20' />Lingo</ListGroupItem>
-                <ListGroupItem className='list-group-item text-default text-center' hover href='https://allthingsdiscgolf.com/two-disc-golf-putting-tips-focus-simulation/' target='_blank' rel='noopener noreferrer'><img className='pr-2' src={tipsIcon} alt='tips icon' height='20' />Tips</ListGroupItem>
-                <ListGroupItem className='list-group-item text-default text-center' hover href='https://mainediscgolf.com/greenhorn/simple-putting-drill/' target='_blank' rel='noopener noreferrer'><img className='pr-2' src={drillIcon} alt='drill icon' height='20' />Drills</ListGroupItem>
-                <ListGroupItem className='list-group-item text-default text-center' hover href='https://dgputtheads.com/disc-golf-putting-games' target='_blank' rel='noopener noreferrer'><img className='pr-2' src={gameIcon} alt='game icon' height='20' />Games</ListGroupItem>
+                <ListGroupItem className='list-group-item text-default text-center' hover href='https://www.innovadiscs.com/home/disc-golf-faq/glossary-of-terms/' target='_blank' rel='noopener noreferrer'>
+                  <img className='pr-2' src='https://res.cloudinary.com/joeschmoe1/image/upload/f_auto,q_auto/v1541266607/putting-logbook/lingo-icon.png' alt='lingo icon' height='20' />
+                  Lingo
+                </ListGroupItem>
+                <ListGroupItem className='list-group-item text-default text-center' hover href='https://allthingsdiscgolf.com/two-disc-golf-putting-tips-focus-simulation/' target='_blank' rel='noopener noreferrer'>
+                  <img className='pr-2' src='https://res.cloudinary.com/joeschmoe1/image/upload/f_auto,q_auto/v1541266607/putting-logbook/tips-icon.png' alt='tips icon' height='20' />
+                  Tips
+                </ListGroupItem>
+                <ListGroupItem className='list-group-item text-default text-center' hover href='https://mainediscgolf.com/greenhorn/simple-putting-drill/' target='_blank' rel='noopener noreferrer'>
+                  <img className='pr-2' src='https://res.cloudinary.com/joeschmoe1/image/upload/f_auto,q_auto/v1541266607/putting-logbook/drill-icon.png' alt='drill icon' height='20' />
+                  Drills
+                </ListGroupItem>
+                <ListGroupItem className='list-group-item text-default text-center' hover href='https://dgputtheads.com/disc-golf-putting-games' target='_blank' rel='noopener noreferrer'>
+                  <img className='pr-2' src='https://res.cloudinary.com/joeschmoe1/image/upload/f_auto,q_auto/v1541266607/putting-logbook/game-icon.png' alt='game icon' height='20' />
+                  Games
+                </ListGroupItem>
               </ListGroup>
             </div>
           </div>
@@ -76,10 +84,22 @@ export const About = () => {
           <div className='row mb-4'>
             <div className='col px-4'>
               <ListGroup>
-                <ListGroupItem className='list-group-item text-default text-center'><i className='fa fa-line-chart pr-2' aria-hidden='true' />More Charts!</ListGroupItem>
-                <ListGroupItem className='list-group-item text-default text-center'><i className='fa fa-user-circle pr-2' style={{ color: '#fbc02d' }} aria-hidden='true' />User Accounts!</ListGroupItem>
-                <ListGroupItem className='list-group-item text-default text-center'><i className='fa fa-rocket pr-2' style={{ color: '#FF8800' }} aria-hidden='true' />Site Migration!</ListGroupItem>
-                <ListGroupItem className='list-group-item text-default text-center'><i className='fa fa-eye pr-2' style={{ color: '#43a047' }} aria-hidden='true' />Aestheic Tweaks!</ListGroupItem>
+                <ListGroupItem className='list-group-item text-default text-center'>
+                  <i className='fa fa-line-chart pr-2' aria-hidden='true' />
+                  More Charts!
+                </ListGroupItem>
+                <ListGroupItem className='list-group-item text-default text-center'>
+                  <i className='fa fa-user-circle pr-2' style={{ color: '#fbc02d' }} aria-hidden='true' />
+                  User Accounts!
+                </ListGroupItem>
+                <ListGroupItem className='list-group-item text-default text-center'>
+                  <i className='fa fa-rocket pr-2' style={{ color: '#FF8800' }} aria-hidden='true' />
+                  Site Migration!
+                </ListGroupItem>
+                <ListGroupItem className='list-group-item text-default text-center'>
+                  <i className='fa fa-eye pr-2' style={{ color: '#43a047' }} aria-hidden='true' />
+                  Aestheic Tweaks!
+                </ListGroupItem>
               </ListGroup>
             </div>
           </div>

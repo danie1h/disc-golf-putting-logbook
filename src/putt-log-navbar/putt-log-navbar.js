@@ -30,7 +30,7 @@ class PuttLogNavbar extends React.Component {
           <NavbarBrand href={process.env.PUBLIC_URL + '/#'}>
             <div className='d-inline-flex flex-row align-items-center'>
               <Animation type='rollIn'>
-                <img src={plLogo} alt='logo' height='25' className='m-1' />
+                <img src='https://res.cloudinary.com/joeschmoe1/image/upload/f_auto,q_auto/v1541266582/putting-logbook/pl-logo.png' alt='logo' height='30' className='m-1' />
               </Animation>
               <strong className='nav-title'>Putting Logbook</strong>
             </div>
