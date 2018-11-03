@@ -95,8 +95,8 @@ export const About = () => {
           </div>
           <div className='row mb-4'>
             <div className='col px-4 text-center'>
-              <a className='btn btn-default waves-effect waves-light' href='mailto:dhumphreys.co@mail.com'><i className='fa fa-envelope-open-o pr-2' aria-hidden='true' />Contact</a>
-              <a className='btn btn-default waves-effect waves-light' href='https://github.com/danie1h/putting-logbook' target='_blank' rel='noopener noreferrer'><i className='fa fa-code-fork pr-2' style={{ color: '#e0e0e0' }} aria-hidden='true' />Contribute</a>
+              <a className='btn btn-sm btn-default waves-effect waves-light' href='mailto:dhumphreys.co@mail.com'><i className='fa fa-envelope-open-o pr-2' aria-hidden='true' />Contact</a>
+              <a className='btn btn-sm btn-default waves-effect waves-light' href='https://github.com/danie1h/putting-logbook' target='_blank' rel='noopener noreferrer'><i className='fa fa-code-fork pr-2' style={{ color: '#e0e0e0' }} aria-hidden='true' />Contribute</a>
             </div>
           </div>
         </div>

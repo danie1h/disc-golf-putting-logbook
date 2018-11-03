@@ -70,10 +70,10 @@ class PuttResults extends Component {
                   </div>
                 </div>
                 <div className='row my-1 d-flex justify-content-center'>
-                  <div className='col-lg-3  col-md-4 col-sm-12'>
+                  <div className='col-lg-3  col-md-4 col-sm-12 my-5'>
                     <ResultsDoughnutChart puttAttempts={this.props.puttLog.map(item => item.mode)} />
                   </div>
-                  <div className='col-lg-3  col-md-4 col-sm-12'>
+                  <div className='col-lg-3  col-md-4 col-sm-12 my-5'>
                     <ResultsLineChart puttLog={this.props.puttLog} />
                   </div>
                 </div>
