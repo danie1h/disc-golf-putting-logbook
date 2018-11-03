@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Stage, Layer } from 'react-konva'
+import { ResultsTable } from './results-viz/results-table.js'
 import PropTypes from 'prop-types'
 import './results.css'
 
@@ -61,23 +62,7 @@ class PuttResults extends Component {
                     </div>
                   </div>
                 </div>
-                <div className='row my-1'>
-                  <div className='col d-flex flex-row justify-content-center'>
-                    <table className='data-table'>
-                      <thead>
-                        <tr>
-                          <th>Hole</th>
-                          <th>Attempt</th>
-                          <th>Position</th>
-                          <th>Tags</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {puttDataList}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+                <ResultsTable puttLog={this.props.puttLog} />
               </div>
             )
             : (
