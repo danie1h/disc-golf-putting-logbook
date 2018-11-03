@@ -56,12 +56,12 @@ self.__precacheManifest = [
     "url": "/putting-logbook/static/media/fontawesome-webfont.912ec66d.svg"
   },
   {
-    "revision": "8ef6a08cdc1154920165680a4edde771",
-    "url": "/putting-logbook/static/media/arrow_right.8ef6a08c.svg"
-  },
-  {
     "revision": "11911410dca2de148f30954eb2fd5eab",
     "url": "/putting-logbook/static/media/arrow_left.11911410.svg"
+  },
+  {
+    "revision": "8ef6a08cdc1154920165680a4edde771",
+    "url": "/putting-logbook/static/media/arrow_right.8ef6a08c.svg"
   },
   {
     "revision": "dfe56a876d0282555d1e2458e278060f",
@@ -124,27 +124,27 @@ self.__precacheManifest = [
     "url": "/putting-logbook/static/media/Roboto-Bold.dc81817d.woff"
   },
   {
-    "revision": "894a2ede85a483bf9bedefd4db45cdb9",
-    "url": "/putting-logbook/static/media/Roboto-Medium.894a2ede.ttf"
-  },
-  {
-    "revision": "46e48ce0628835f68a7369d0254e4283",
-    "url": "/putting-logbook/static/media/Roboto-Light.46e48ce0.ttf"
+    "revision": "94998475f6aea65f558494802416c1cf",
+    "url": "/putting-logbook/static/media/Roboto-Thin.94998475.ttf"
   },
   {
     "revision": "df7b648ce5356ea1ebce435b3459fd60",
     "url": "/putting-logbook/static/media/Roboto-Regular.df7b648c.ttf"
   },
   {
-    "revision": "94998475f6aea65f558494802416c1cf",
-    "url": "/putting-logbook/static/media/Roboto-Thin.94998475.ttf"
+    "revision": "46e48ce0628835f68a7369d0254e4283",
+    "url": "/putting-logbook/static/media/Roboto-Light.46e48ce0.ttf"
+  },
+  {
+    "revision": "894a2ede85a483bf9bedefd4db45cdb9",
+    "url": "/putting-logbook/static/media/Roboto-Medium.894a2ede.ttf"
   },
   {
     "revision": "f02117878d735bdf2b67",
     "url": "/putting-logbook/static/css/1.f517fa84.chunk.css"
   },
   {
-    "revision": "6e2191aa552ac0a7ff5685ff6d5c50c7",
+    "revision": "08c56344eb9d458600246cdf767e0917",
     "url": "/putting-logbook/index.html"
   }
 ];
