@@ -33,10 +33,10 @@ export const About = () => {
         <div className='col-md-8 text-justify px-4'>
           <div className='row'>
             <div className='col'>
-              <p>In the sport of <a className='text-default' href='https://www.pdga.com/introduction' target='_blank' rel='noopener noreferrer'>Disc Golf</a>, putting is an essential aspect and, arguably, one of the greatest challenges in a round. It's not uncommon for players to frequently miss their mark of the basket. Consistency is key, and this project will enable disc golfers to track their putting consistency. By identifying patterns, players will have the ability to leverage their stats to make the necessary modifications that will make them a better putter and, in turn, an improved player. Cue the Putting Logbook.</p>
+              <p>In the sport of <a className='text-default' href='https://www.pdga.com/introduction' target='_blank' rel='noopener noreferrer'>Disc Golf</a>, putting is an essential aspect and, arguably, one of the greatest challenges in a round. It's not uncommon for players to frequently miss their mark of the basket. If you're like me, you may even have those nervous putt jitters that can impact the rest of the round. Consistency is key, and this project will enable disc golfers to track their putting consistency. By identifying patterns, players will have the ability to leverage their stats to make the necessary modifications that will make them a better putter and, in turn, an improved player. Cue the Putting Logbook.</p>
             </div>
           </div>
-          <div className='row my-3'>
+          <div className='row mt-3 mb-5'>
             <div className='col'>
               <AboutGIFCarousel />
             </div>
@@ -45,7 +45,7 @@ export const About = () => {
         <div className='col-md-4 mb-3'>
           <div className='row'>
             <div className='col'>
-              <h2 className='blue-grey-text text-center h3-responsive'>Related Disc Golf Readings</h2>
+              <h2 className='blue-grey-text text-left h3-responsive'>Related Disc Golf Readings</h2>
             </div>
           </div>
           <div className='row'>
@@ -53,7 +53,7 @@ export const About = () => {
               <hr className='my-2' />
             </div>
           </div>
-          <div className='row'>
+          <div className='row mb-4'>
             <div className='col px-4'>
               <ListGroup>
                 <ListGroupItem className='list-group-item text-default text-center' hover href='https://www.innovadiscs.com/home/disc-golf-faq/glossary-of-terms/' target='_blank' rel='noopener noreferrer'><img className='pr-2' src={lingoIcon} alt='lingo icon' height='20' />Lingo</ListGroupItem>
@@ -61,6 +61,42 @@ export const About = () => {
                 <ListGroupItem className='list-group-item text-default text-center' hover href='https://mainediscgolf.com/greenhorn/simple-putting-drill/' target='_blank' rel='noopener noreferrer'><img className='pr-2' src={drillIcon} alt='drill icon' height='20' />Drills</ListGroupItem>
                 <ListGroupItem className='list-group-item text-default text-center' hover href='https://dgputtheads.com/disc-golf-putting-games' target='_blank' rel='noopener noreferrer'><img className='pr-2' src={gameIcon} alt='game icon' height='20' />Games</ListGroupItem>
               </ListGroup>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col'>
+              <h2 className='blue-grey-text text-left h3-responsive'>Upcoming Features</h2>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col'>
+              <hr className='my-2' />
+            </div>
+          </div>
+          <div className='row mb-4'>
+            <div className='col px-4'>
+              <ListGroup>
+                <ListGroupItem className='list-group-item text-default text-center'><i className='fa fa-line-chart pr-2' aria-hidden='true' />More Charts!</ListGroupItem>
+                <ListGroupItem className='list-group-item text-default text-center'><i className='fa fa-user-circle pr-2' style={{ color: '#fbc02d' }} aria-hidden='true' />User Accounts!</ListGroupItem>
+                <ListGroupItem className='list-group-item text-default text-center'><i className='fa fa-rocket pr-2' style={{ color: '#FF8800' }} aria-hidden='true' />Site Migration!</ListGroupItem>
+                <ListGroupItem className='list-group-item text-default text-center'><i className='fa fa-eye pr-2' style={{ color: '#43a047' }} aria-hidden='true' />Aestheic Tweaks!</ListGroupItem>
+              </ListGroup>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col'>
+              <h2 className='blue-grey-text text-left h3-responsive'>Get Involved</h2>
+            </div>
+          </div>
+          <div className='row'>
+            <div className='col'>
+              <hr className='my-2' />
+            </div>
+          </div>
+          <div className='row mb-4'>
+            <div className='col px-4 text-center'>
+              <a className='btn btn-default waves-effect waves-light' href='mailto:dhumphreys.co@mail.com'><i className='fa fa-envelope-open-o pr-2' aria-hidden='true' />Contact</a>
+              <a className='btn btn-default waves-effect waves-light' href='https://github.com/danie1h/putting-logbook' target='_blank' rel='noopener noreferrer'><i className='fa fa-code-fork pr-2' style={{ color: '#e0e0e0' }} aria-hidden='true' />Contribute</a>
             </div>
           </div>
         </div>
