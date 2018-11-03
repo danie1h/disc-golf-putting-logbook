@@ -21,23 +21,19 @@ export const ResultsTable = (props) => {
   })
 
   return (
-    <div className='row my-1 d-flex justify-content-center'>
-      <div className='col-lg-6  col-md-8 col-sm-12'>
-        <Table className='data-table' small striped hover responsive>
-          <TableHead>
-            <tr>
-              <th>#</th>
-              <th>Attempt</th>
-              <th>Position</th>
-              <th>Tags</th>
-            </tr>
-          </TableHead>
-          <TableBody>
-            {puttDataList}
-          </TableBody>
-        </Table>
-      </div>
-    </div>
+    <Table className='data-table' small striped hover responsive>
+      <TableHead>
+        <tr>
+          <th>#</th>
+          <th>Attempt</th>
+          <th>Position</th>
+          <th>Tags</th>
+        </tr>
+      </TableHead>
+      <TableBody>
+        {puttDataList}
+      </TableBody>
+    </Table>
   )
 }
 

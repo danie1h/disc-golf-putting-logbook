@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Stage, Layer } from 'react-konva'
 import { ResultsTable } from './results-viz/results-table.js'
+import ResultsDoughnutChart from './results-viz/results-doughnut-chart.js'
+import { ResultsLineChart } from './results-viz/results-line-chart.js'
 import PropTypes from 'prop-types'
 import './results.css'
 
@@ -62,7 +64,19 @@ class PuttResults extends Component {
                     </div>
                   </div>
                 </div>
-                <ResultsTable puttLog={this.props.puttLog} />
+                <div className='row my-1 d-flex justify-content-center'>
+                  <div className='col-lg-6  col-md-8 col-sm-12'>
+                    <ResultsTable puttLog={this.props.puttLog} />
+                  </div>
+                </div>
+                <div className='row my-1 d-flex justify-content-center'>
+                  <div className='col-lg-3  col-md-4 col-sm-12'>
+                    <ResultsDoughnutChart puttAttempts={this.props.puttLog.map(item => item.mode)} />
+                  </div>
+                  <div className='col-lg-3  col-md-4 col-sm-12'>
+                    <ResultsLineChart puttLog={this.props.puttLog} />
+                  </div>
+                </div>
               </div>
             )
             : (

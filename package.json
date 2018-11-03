@@ -5,14 +5,17 @@
   "homepage": "https://danie1h.github.io/putting-logbook/",
   "dependencies": {
     "ajv": "^6.5.4",
+    "chart.js": "^2.7.3",
     "konva": "^2.4.2",
     "mdbreact": "^4.8.2",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.5.2",
     "react-konva": "^16.5.2",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.0.4"
+    "react-scripts": "2.0.4",
+    "salad-ui.chart": "^1.1.55"
   },
   "scripts": {
     "predeploy": "npm run build",
