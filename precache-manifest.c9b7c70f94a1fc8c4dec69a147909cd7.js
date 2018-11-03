@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/putting-logbook/static/media/Roboto-Regular.30799efa.eot"
   },
   {
-    "revision": "0296fa74cd87883391ee",
+    "revision": "1771c21a93281438fa44",
     "url": "/putting-logbook/static/css/main.edc9eb2f.chunk.css"
   },
   {
@@ -56,12 +56,12 @@ self.__precacheManifest = [
     "url": "/putting-logbook/static/media/fontawesome-webfont.912ec66d.svg"
   },
   {
-    "revision": "11911410dca2de148f30954eb2fd5eab",
-    "url": "/putting-logbook/static/media/arrow_left.11911410.svg"
-  },
-  {
     "revision": "8ef6a08cdc1154920165680a4edde771",
     "url": "/putting-logbook/static/media/arrow_right.8ef6a08c.svg"
+  },
+  {
+    "revision": "11911410dca2de148f30954eb2fd5eab",
+    "url": "/putting-logbook/static/media/arrow_left.11911410.svg"
   },
   {
     "revision": "dfe56a876d0282555d1e2458e278060f",
@@ -72,8 +72,8 @@ self.__precacheManifest = [
     "url": "/putting-logbook/static/media/Roboto-Light.a990f611.eot"
   },
   {
-    "revision": "0296fa74cd87883391ee",
-    "url": "/putting-logbook/static/js/main.0296fa74.chunk.js"
+    "revision": "1771c21a93281438fa44",
+    "url": "/putting-logbook/static/js/main.1771c21a.chunk.js"
   },
   {
     "revision": "4d9f3f9e5195e7b074bb63ba4ce42208",
@@ -124,8 +124,8 @@ self.__precacheManifest = [
     "url": "/putting-logbook/static/media/Roboto-Bold.dc81817d.woff"
   },
   {
-    "revision": "94998475f6aea65f558494802416c1cf",
-    "url": "/putting-logbook/static/media/Roboto-Thin.94998475.ttf"
+    "revision": "894a2ede85a483bf9bedefd4db45cdb9",
+    "url": "/putting-logbook/static/media/Roboto-Medium.894a2ede.ttf"
   },
   {
     "revision": "46e48ce0628835f68a7369d0254e4283",
@@ -136,15 +136,15 @@ self.__precacheManifest = [
     "url": "/putting-logbook/static/media/Roboto-Regular.df7b648c.ttf"
   },
   {
-    "revision": "894a2ede85a483bf9bedefd4db45cdb9",
-    "url": "/putting-logbook/static/media/Roboto-Medium.894a2ede.ttf"
+    "revision": "94998475f6aea65f558494802416c1cf",
+    "url": "/putting-logbook/static/media/Roboto-Thin.94998475.ttf"
   },
   {
     "revision": "f02117878d735bdf2b67",
     "url": "/putting-logbook/static/css/1.f517fa84.chunk.css"
   },
   {
-    "revision": "8f746d78e07e3fedee2a0cd6fa1f7c3f",
+    "revision": "6e2191aa552ac0a7ff5685ff6d5c50c7",
     "url": "/putting-logbook/index.html"
   }
 ];
