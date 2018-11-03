@@ -1,9 +1,42 @@
+#home {
+  background: url(../../src/resources/images/5-ggp-basket.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -2;
+  margin: 0;
+  padding: 0;
+}
+
+#home-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+#home-content {
+  background-color: #3e4551 !important;
+  border-radius: 15px;
+  box-shadow: 0 0 15px grey;
+  padding: 10px;
+}
+
 .app-title {
   font-size: 1.25em;
+  color: #eceff1;
 }
 
 .app-secondary-title {
   font-size: .9em;
+  color: #cfd8dc;
 }
 
 @media only screen and (min-width: 480px) {
@@ -13,5 +46,24 @@
 
   .app-secondary-title {
     font-size: 1.25em;
+  }
+
+  #home-content {
+    padding: 20px;
+  }
+
+  #home {
+    background: url(../../src/resources/images/9-ggp.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -2;
+    margin: 0;
+    padding: 0;
   }
 }
