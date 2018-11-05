@@ -1,6 +1,5 @@
 import React from 'react'
 import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink, Animation } from 'mdbreact'
-import plLogo from '../resources/images/pl-logo.png'
 
 /**
  * Renders the navigation menu
