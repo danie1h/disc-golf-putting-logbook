@@ -11,19 +11,23 @@ import PropTypes from 'prop-types'
 export const ResultsLineChart = (props) => {
   let puttHitCountOvertime = []
   let holeNumList = []
+  let holeNumListLabel = []
   let puttHitCounter = 0
+  let holeNumCounter = 1
 
   // get putt hit count over time
   for (let item of props.puttLog) {
-    holeNumList.push(`# ${item.holeNum}`)
+    holeNumListLabel.push(`# ${item.holeNum}`)
+    holeNumList.push(holeNumCounter)
     if (item.mode === 'hit') {
       puttHitCounter++
     }
     puttHitCountOvertime.push(puttHitCounter)
+    holeNumCounter++
   }
 
   const lineChartData = {
-    labels: holeNumList,
+    labels: holeNumListLabel,
     datasets: [
       {
         label: 'Hits Throughout Round',
@@ -45,6 +49,18 @@ export const ResultsLineChart = (props) => {
         pointRadius: 1,
         pointHitRadius: 10,
         data: puttHitCountOvertime
+      },
+      {
+        label: 'Perfect Putting',
+        fill: true,
+        lineTension: 0.1,
+        backgroundColor: '#f5f5f5',
+        borderColor: '#eeeeee',
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        data: holeNumList
       }
     ]
   }
