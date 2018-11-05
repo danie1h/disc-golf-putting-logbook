@@ -1,7 +1,7 @@
 {
   "main.css": "/putting-logbook/static/css/main.61f829d3.chunk.css",
-  "main.js": "/putting-logbook/static/js/main.2b8f044e.chunk.js",
-  "main.js.map": "/putting-logbook/static/js/main.2b8f044e.chunk.js.map",
+  "main.js": "/putting-logbook/static/js/main.e9376bb4.chunk.js",
+  "main.js.map": "/putting-logbook/static/js/main.e9376bb4.chunk.js.map",
   "static/css/1.001cf2e7.chunk.css": "/putting-logbook/static/css/1.001cf2e7.chunk.css",
   "static/js/1.dbd417af.chunk.js": "/putting-logbook/static/js/1.dbd417af.chunk.js",
   "static/js/1.dbd417af.chunk.js.map": "/putting-logbook/static/js/1.dbd417af.chunk.js.map",
@@ -12,6 +12,6 @@
   "static/css/main.61f829d3.chunk.css.map": "/putting-logbook/static/css/main.61f829d3.chunk.css.map",
   "static/css/1.001cf2e7.chunk.css.map": "/putting-logbook/static/css/1.001cf2e7.chunk.css.map",
   "index.html": "/putting-logbook/index.html",
-  "precache-manifest.dc5dd09912b58a190c6d6a54ea11bfd0.js": "/putting-logbook/precache-manifest.dc5dd09912b58a190c6d6a54ea11bfd0.js",
+  "precache-manifest.ababa543866da9775fb02a76989d3e72.js": "/putting-logbook/precache-manifest.ababa543866da9775fb02a76989d3e72.js",
   "service-worker.js": "/putting-logbook/service-worker.js"
 }
